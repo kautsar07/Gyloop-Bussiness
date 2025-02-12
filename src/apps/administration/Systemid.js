@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
-import { Button, Col, Dropdown, Nav, Row, Form } from "react-bootstrap";
+import { Button, Col, Dropdown, Nav, Row, Form, Table } from "react-bootstrap";
 import Select from "react-select";
 import ReactDatePicker from "react-datepicker";
 import { SketchPicker } from "react-color";
@@ -23,6 +23,7 @@ import img17 from "../../assets/img/img17.jpg";
 import img18 from "../../assets/img/img18.jpg";
 import img19 from "../../assets/img/img19.jpg";
 import { marker } from "leaflet";
+import { dataTableSystemId } from "../../data/apps/administration/org-system/system-id";
 
 export default function Systemid() {
   const [startDate, setStartDate] = useState(new Date());
@@ -239,10 +240,33 @@ export default function Systemid() {
     e.target.closest(".row").classList.toggle("nav-show");
   };
 
+  const dataTable = dataTableSystemId;
+
   const selectSystemType = [
-    { value: "Development", label: "Development" },
-    { value: "Testing", label: "Testing" },
-    { value: "Production", label: "Production" },
+    {
+      value: "Development",
+      label: (
+        <>
+          <i className=" far-server" style={{ marginRight: 5 }}></i>Development
+        </>
+      ),
+    },
+    {
+      value: "Testing",
+      label: (
+        <>
+          <i className=" far-server" style={{ marginRight: 5 }}></i>Testing
+        </>
+      ),
+    },
+    {
+      value: "Production",
+      label: (
+        <>
+          <i className=" far-server" style={{ marginRight: 5 }}></i>Production
+        </>
+      ),
+    },
   ];
 
   return (
@@ -272,16 +296,13 @@ export default function Systemid() {
               variant=""
               className="btn-white d-flex align-items-center gap-2"
             >
-              {show === "Edit" ? (
-                <>
-                  <i className="ri-pencil-line"></i>Edit
-                </>
-              ) : (
-                <>
-                  <i className="far-glasses" style={{ fontSize: "14px" }}></i>
-                  Display
-                </>
-              )}
+              <i
+                className={` ${
+                  show === "Edit" ? "far-pen-to-square" : "far-glasses"
+                }`}
+                style={{ fontSize: 14 }}
+              ></i>
+              Change
             </Button>
             <Button
               variant=""
@@ -325,21 +346,19 @@ export default function Systemid() {
                 <Select
                   id="option1"
                   options={selectSystemType}
-                  isSearchable={true}
-                  placeholder="Server"
+                  isSearchable={false}
+                  placeholder={
+                    <>
+                      <i className=" far-server" style={{ marginRight: 5 }}></i>
+                      Server
+                    </>
+                  }
                   className=" react-select-custom"
                 />
               </div>
             </div>
           </div>
-          <div
-            className="main-panel-config"
-            style={{ height: "82%"}}
-          >
-            {/* <div className="main-subtitle" >
-                        
-                    </div> */}
-
+          <div className="main-panel-config">
             <div style={{ marginTop: 10, padding: 0 }}>
               <Row className=" Row-SystemId">
                 <Col sm="6">
@@ -356,6 +375,7 @@ export default function Systemid() {
                       type="text"
                       placeholder="Generated Number from the Systems"
                       disabled={show === "Edit" ? false : true}
+                      defaultValue={dataTableSystemId[0].id_sytm}
                     />
                   </div>
 
@@ -369,6 +389,7 @@ export default function Systemid() {
                       isSearchable={true}
                       isDisabled={show === "Edit" ? false : true}
                       className=" react-select-custom"
+                      defaultValue={selectSystemType[0]}
                     />
                   </div>
 
@@ -449,42 +470,42 @@ export default function Systemid() {
                     </Col>
                     </Row> */}
           </div>
-          <div
-            style={{
-              display: "flex",
-              gap: 16,
-              justifyContent: "flex-end",
-              marginRight: 30,
-            }}
-          >
-            <button
-              style={{
-                background: "#0070d0",
-                padding: "5px 10px",
-                borderRadius: " 4px",
-                color: "white",
-                border: "none",
-                width: 70,
-              }}
-            >
-              Save
-            </button>
-            <button
-              style={{
-                background: "#eb305a",
-                padding: "5px 10px",
-                borderRadius: " 4px",
-                color: "white",
-                border: "none",
-                width: 70,
-              }}
-            >
-              Discard
-            </button>
+          <div className="custom-table">
+            <Table className="mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">System ID</th>
+                  <th scope="col">System Type</th>
+                  <th scope="col">System Type Date</th>
+                  <th scope="col">Created By</th>
+                  <th scope="col">Sytem URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dataTableSystemId.map((item, i) => (
+                  <tr key={i}>
+                    <th scope="row">{item.id_sytm}</th>
+                    <td>{item.type_sytm}</td>
+                    <td>{item.crdt_at}</td>
+                    <td>{item.crdt_by}</td>
+                    <td>{item.urll_sytm}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
           </div>
         </div>
-
-        <Footer />
+        <div style={{ paddingBottom: 70 }}>
+          <Footer />
+        </div>
+      </div>
+      <div className=" button-action">
+        <Button variant="" className="btn-primary ">
+          Save
+        </Button>
+        <Button variant="" className="btn-danger ">
+          Discard
+        </Button>
       </div>
     </React.Fragment>
   );

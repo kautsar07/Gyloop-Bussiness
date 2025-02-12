@@ -388,6 +388,15 @@
   .far-glasses:before {content:"\f530";}
   .fas-glasses:before {content:"\f530";}
   .fal-glasses:before {content:"\f530";}
+  /* icon: server */
+  .far-server:before {content:"\f233";}
+  .fas-server:before {content:"\f233";}
+  .fal-server:before {content:"\f233";}
+  /* icon: pen-to-square */
+  .far-pen-to-square:before {content:"\f044";}
+  .fas-pen-to-square:before {content:"\f044";}
+  .fal-pen-to-square:before {content:"\f044";}
+  
 
 
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from './layouts/Main';
+import Myview from "./apps/home/Myview.js";
 import NotFound from "./pages/NotFound";
 
 import publicRoutes from "./routes/PublicRoutes";
