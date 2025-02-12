@@ -8,7 +8,6 @@ import ReactDatePicker from "react-datepicker";
 import { SketchPicker } from "react-color";
 import "../../assets/css/react-datepicker.min.css";
 
-
 import { dataTableSystemId } from "../../data/apps/administration/org-system/system-id";
 
 export default function Systemid() {
@@ -22,7 +21,6 @@ export default function Systemid() {
       document.body.classList.remove("page-app");
     };
   }, []);
-  
 
   const [chatActive, setChatActive] = useState(1);
   const [msgShow, setMsgShow] = useState(false);
@@ -78,7 +76,7 @@ export default function Systemid() {
                 System ID
               </li>
             </ol>
-            <h4 className="main-title mb-0">Display System ID Configuration</h4>
+            <h4 className="main-title mb-0">{show==="Edit"? "Edit":"Display"} System ID Configuration</h4>
           </div>
           <div className="d-flex gap-2 mt-3 mt-md-0">
             <Button
@@ -90,11 +88,11 @@ export default function Systemid() {
             >
               <i
                 className={` ${
-                  show === "Edit" ? "fars-pen-to-square" : "far-glasses"
+                  show === "Edit" ? "fars-glasses" : "fars-pen-to-square"
                 }`}
                 style={{ fontSize: 14 }}
               ></i>
-              Change
+              {show === "Edit" ? "Display" : "Change"}
             </Button>
             <Button
               variant=""
@@ -153,7 +151,7 @@ export default function Systemid() {
           <div className="main-panel-config">
             <div style={{ marginTop: 10, padding: 0 }}>
               <Row className=" Row-SystemId">
-                <Col sm="6">
+                <Col>
                   <div className="mb-4">
                     <Form.Label
                       className="f-1 form-label-custom"
@@ -181,7 +179,12 @@ export default function Systemid() {
                       isSearchable={true}
                       isDisabled={show === "Edit" ? false : true}
                       className=" react-select-custom"
-                      defaultValue={[{value:dataTableSystemId[1].type_sytm, label:dataTableSystemId[0].type_sytm}]}
+                      defaultValue={[
+                        {
+                          value: dataTableSystemId[1].type_sytm,
+                          label: dataTableSystemId[0].type_sytm,
+                        },
+                      ]}
                     />
                   </div>
 
@@ -189,7 +192,7 @@ export default function Systemid() {
                     <Form.Label className="form-label-custom">
                       System Type
                     </Form.Label>
-                    <Col sm="6">
+                    <Col>
                       <ReactDatePicker
                         selected={startDate2}
                         onChange={(date) => setStartDate2(date)}
@@ -206,7 +209,7 @@ export default function Systemid() {
                     >
                       Created By
                     </Form.Label>
-                    <Col sm="6">
+                    <Col>
                       <Form.Control
                         id="crdt_by"
                         className="mb-2"
@@ -219,7 +222,25 @@ export default function Systemid() {
                   </div>
                 </Col>
 
-                <Col sm="6">
+                <Col>
+                  <div className="mb-1">
+                    <Form.Label
+                      className="f-1 form-label-custom"
+                      htmlFor="System URL"
+                    >
+                      System URL
+                    </Form.Label>
+                    <Form.Control
+                      id="urll_sytm"
+                      // className="mb-2"
+                      type="text"
+                      placeholder="System URL"
+                      disabled={show === "Edit" ? false : true}
+                      defaultValue={dataTableSystemId[0].urll_sytm}
+                    />
+                  </div>
+                </Col>
+                <Col>
                   <div className="mb-1">
                     <Form.Label
                       className="f-1 form-label-custom"
@@ -265,24 +286,70 @@ export default function Systemid() {
                     </Row> */}
           </div>
           <div className="custom-table">
-            <Table className="mb-0">
+            <div className="header-table-custom">
+              <h6 style={{ fontWeight: "bold", fontSize: "16px" }}>
+                Showing {dataTableSystemId.length} results
+              </h6>
+              <div style={{ display: "flex", gap: 15 }}>
+                <Button
+                  variant=""
+                  className="btn-white d-flex align-items-center gap-2"
+                >
+                  <i className="fars-file-excel"></i>
+                </Button>
+                <div style={{ position: "relative" }}>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Search"
+                    style={{ paddingRight: 30, height:'100%' }}
+                  />
+                  <i
+                    className="ri-search-line"
+                    style={{ position: "absolute", right: 10, top: "23%" }}
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <Table responsive className="mb-0">
               <thead>
                 <tr>
-                  <th scope="col" style={{width: '200px'}}>System ID</th>
-                  <th scope="col" style={{width: '200px'}}>System Type</th>
-                  <th scope="col" style={{width: '200px'}}>System Type Date</th>
-                  <th scope="col" style={{width: '200px'}}>Created By</th>
-                  <th scope="col" style={{width: '200px'}}>Sytem URL</th>
+                  <th scope="col" style={{ width: "200px" }}>
+                    System ID
+                  </th>
+                  <th scope="col" style={{ width: "200px" }}>
+                    System Type
+                  </th>
+                  <th scope="col" style={{ width: "200px" }}>
+                    System Type Date
+                  </th>
+                  <th scope="col" style={{ width: "200px" }}>
+                    Created By
+                  </th>
+                  <th scope="col" style={{ width: "200px" }}>
+                    Sytem URL
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {dataTableSystemId.map((item, i) => (
                   <tr key={i}>
-                    <th scope="row"> <div style={{width:200}}>{item.id_sytm}</div></th>
-                    <td><div style={{width:200}}>{item.type_sytm}</div></td>
-                    <td><div style={{width:200}}>{item.crdt_at}</div></td>
-                    <td><div style={{width:200}}>{item.crdt_by}</div></td>
-                    <td><div style={{width:200}}>{item.urll_sytm}</div></td>
+                    <th scope="row">
+                      {" "}
+                      <div style={{ width: 200 }}>{item.id_sytm}</div>
+                    </th>
+                    <td>
+                      <div style={{ width: 200 }}>{item.type_sytm}</div>
+                    </td>
+                    <td>
+                      <div style={{ width: 200 }}>{item.crdt_at}</div>
+                    </td>
+                    <td>
+                      <div style={{ width: 200 }}>{item.crdt_by}</div>
+                    </td>
+                    <td>
+                      <div style={{ width: 200 }}>{item.urll_sytm}</div>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -294,10 +361,10 @@ export default function Systemid() {
         </div>
       </div>
       <div className=" button-action">
-        <Button variant="" className="btn-primary ">
+        <Button variant="" className={`${show === "Edit"? "btn-primary":'btn-disable'} `}>
           Save
         </Button>
-        <Button variant="" className="btn-danger ">
+        <Button variant="" className={`${show === "Edit"? "btn-danger":'btn-disable'} `}>
           Discard
         </Button>
       </div>

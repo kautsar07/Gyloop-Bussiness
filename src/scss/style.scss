@@ -100,9 +100,10 @@ Contact: themepixels@gmail.com
 @import "dark";
 
 .Row-SystemId{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     flex-wrap: nowrap;
-    width: 100%;
+    // width: 100%;
     @media screen and (max-width: 500px) {
         flex-direction: column;
       }
@@ -160,8 +161,17 @@ Contact: themepixels@gmail.com
     }
 }
 
-// @media (min-width: 500px){
-//     .custom-table{
-//         height: 200px;
-//     }
+.header-table-custom{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+}
+// .css-16xfy0z-control{
+//     height: 31px !important;
+//     min-height: 0px !important;
+// }
+// .css-hlgwow,.css-1wy0on6{
+//     display: flex !important;
+//     align-items: flex-start !important;
 // }

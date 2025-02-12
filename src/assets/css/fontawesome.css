@@ -409,6 +409,7 @@
   .far-glasses:before {content:"\f530";}
   .fas-glasses:before {content:"\f530";}
   .fal-glasses:before {content:"\f530";}
+  .fars-glasses:before {content:"\f530";}
   /* icon: server */
   .far-server:before {content:"\f233";}
   .fas-server:before {content:"\f233";}
@@ -418,6 +419,11 @@
   .fas-pen-to-square:before {content:"\f044";}
   .fal-pen-to-square:before {content:"\f044";}
   .fars-pen-to-square:before {content:"\f044";}
+  /* icon: excel */
+  .far-file-excel:before {content:"\f1c3";}
+  .fas-file-excel:before {content:"\f1c3";}
+  .fal-file-excel:before {content:"\f1c3";}
+  .fars-file-excel:before {content:"\f1c3";}
   
 
 
