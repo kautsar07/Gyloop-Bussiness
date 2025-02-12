@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from './layouts/Main';
+import Main from './layouts/Main.js';
 import Myview from "./apps/home/Myview.js";
-import NotFound from "./pages/NotFound";
+import NotFound from "./pages/NotFound.js";
 
-import publicRoutes from "./routes/PublicRoutes";
-import protectedRoutes from "./routes/ProtectedRoutes";
+import publicRoutes from "./routes/PublicRoutes.js";
+import protectedRoutes from "./routes/ProtectedRoutes.js";
 
 // import css
 import "./assets/css/remixicon.css";

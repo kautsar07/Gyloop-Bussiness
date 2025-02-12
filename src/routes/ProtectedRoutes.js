@@ -1,291 +1,291 @@
 import React from "react";
 
 // Dashboard
-import EventManagement from "../dashboard/EventManagement";
-import SalesMonitoring from "../dashboard/SalesMonitoring";
-import WebsiteAnalytics from "../dashboard/WebsiteAnalytics";
-import FinanceMonitoring from "../dashboard/FinanceMonitoring";
-import Cryptocurrency from "../dashboard/Cryptocurrency";
-import HelpdeskService from "../dashboard/HelpdeskService";
-import StorageManagement from "../dashboard/StorageManagement";
-import ProductManagement from "../dashboard/ProductManagement";
+import EventManagement from "../dashboard/EventManagement.js";
+import SalesMonitoring from "../dashboard/SalesMonitoring.js";
+import WebsiteAnalytics from "../dashboard/WebsiteAnalytics.js";
+import FinanceMonitoring from "../dashboard/FinanceMonitoring.js";
+import Cryptocurrency from "../dashboard/Cryptocurrency.js";
+import HelpdeskService from "../dashboard/HelpdeskService.js";
+import StorageManagement from "../dashboard/StorageManagement.js";
+import ProductManagement from "../dashboard/ProductManagement.js";
 
 // Apps
-import GalleryMusic from "../apps/GalleryMusic";
-import GalleryVideo from "../apps/GalleryVideo";
-import Tasks from "../apps/tasks/Tasks";
-import Chat from "../apps/messages/Chat";
-import Email from "../apps/messages/Email";
-import AppCalendar from "../apps/tasks/AppCalendar";
-import FileManager from "../apps/FileManager";
-import Contacts from "../apps/networks/Contacts";
-import Connections from "../apps/networks/Connections";
-import Businesspartners from "../apps/networks/Businesspartners";
-import Groups from "../apps/networks/Groups";
-import Buyerportal from "../apps/portals/Buyerportal";
-import Supplierportal from "../apps/portals/Supplierportal";
+import GalleryMusic from "../apps/GalleryMusic.js";
+import GalleryVideo from "../apps/GalleryVideo.js";
+import Tasks from "../apps/tasks/Tasks.js";
+import Chat from "../apps/messages/Chat.js";
+import Email from "../apps/messages/Email.js";
+import AppCalendar from "../apps/tasks/AppCalendar.js";
+import FileManager from "../apps/FileManager.js";
+import Contacts from "../apps/networks/Contacts.js";
+import Connections from "../apps/networks/Connections.js";
+import Businesspartners from "../apps/networks/Businesspartners.js";
+import Groups from "../apps/networks/Groups.js";
+import Buyerportal from "../apps/portals/Buyerportal.js";
+import Supplierportal from "../apps/portals/Supplierportal.js";
 
 //Home
 import Myview from "../apps/home/Myview.js";
 
 // Customers
-import Customermasters from"../apps/customers/Customermasters"
-import Salesevents from"../apps/customers/Salesevents"
-import Leads from"../apps/customers/Leads"
-import Opportunities from"../apps/customers/Opportunities"
-import Salesactivities from"../apps/customers/Salesactivities"
-import Salesbatches from"../apps/customers/Salesbatches"
-import Salesbillingcollection from"../apps/customers/Salesbillingcollection"
-import Salesbillingreport from"../apps/customers/Salesbillingreport"
-import Salesbillings from"../apps/customers/Salesbillings"
-import Salesbom from"../apps/customers/Salesbom"
-import Salescampaign from"../apps/customers/Salescampaign"
-import Salescases from"../apps/customers/Salescases"
-import Salescatalogs from"../apps/customers/Salescatalogs"
-import Saleschannel from"../apps/customers/Saleschannel"
-import Salescommission from"../apps/customers/Salescommission"
-import Salescontacts from"../apps/customers/Salescontacts"
-import Salescontracts from"../apps/customers/Salescontracts"
-import Salescustomerreport from"../apps/customers/Salescustomerreport"
-import Salesdelieryorders from"../apps/customers/Salesdelieryorders"
-import Salesdeliveryreport from"../apps/customers/Salesdeliveryreport"
-import Salesdeliverytracking from"../apps/customers/Salesdeliverytracking"
-import Salesdiscountbudget from"../apps/customers/Salesdiscountbudget"
-import Salesdivisions from"../apps/customers/Salesdivisions"
+import Customermasters from"../apps/customers/Customermasters.js"
+import Salesevents from"../apps/customers/Salesevents.js"
+import Leads from"../apps/customers/Leads.js"
+import Opportunities from"../apps/customers/Opportunities.js"
+import Salesactivities from"../apps/customers/Salesactivities.js"
+import Salesbatches from"../apps/customers/Salesbatches.js"
+import Salesbillingcollection from"../apps/customers/Salesbillingcollection.js"
+import Salesbillingreport from"../apps/customers/Salesbillingreport.js"
+import Salesbillings from"../apps/customers/Salesbillings.js"
+import Salesbom from"../apps/customers/Salesbom.js"
+import Salescampaign from"../apps/customers/Salescampaign.js"
+import Salescases from"../apps/customers/Salescases.js"
+import Salescatalogs from"../apps/customers/Salescatalogs.js"
+import Saleschannel from"../apps/customers/Saleschannel.js"
+import Salescommission from"../apps/customers/Salescommission.js"
+import Salescontacts from"../apps/customers/Salescontacts.js"
+import Salescontracts from"../apps/customers/Salescontracts.js"
+import Salescustomerreport from"../apps/customers/Salescustomerreport.js"
+import Salesdelieryorders from"../apps/customers/Salesdelieryorders.js"
+import Salesdeliveryreport from"../apps/customers/Salesdeliveryreport.js"
+import Salesdeliverytracking from"../apps/customers/Salesdeliverytracking.js"
+import Salesdiscountbudget from"../apps/customers/Salesdiscountbudget.js"
+import Salesdivisions from"../apps/customers/Salesdivisions.js"
 // import Salesevents from"../apps/customers/Salesevents"
-import Salesfleets from"../apps/customers/Salesfleets"
-import Salesgroups from"../apps/customers/Salesgroups"
-import Salesinventoryreport from"../apps/customers/Salesinventoryreport"
-import Saleskpi from"../apps/customers/Saleskpi"
-import Saleskpireport from"../apps/customers/Saleskpireport"
-import Salesloyaltyprograms from"../apps/customers/Salesloyaltyprograms"
-import Salesmembership from"../apps/customers/Salesmembership"
-import Salesoffices from"../apps/customers/Salesoffices"
-import Salesorders from"../apps/customers/Salesorders"
-import Salesequipments from"../apps/customers/Salesequipments"
-import Salesorg from"../apps/customers/Salesorg"
-import Salespersons from"../apps/customers/Salespersons"
-import Salespricing from"../apps/customers/Salespricing"
-import Salesproductreport from"../apps/customers/Salesproductreport"
-import Salesproducts from"../apps/customers/Salesproducts"
-import Salesproposals from"../apps/customers/Salesproposals"
-import Salesquotations from"../apps/customers/Salesquotations"
-import Salesrecurring from"../apps/customers/Salesrecurring"
-import Salesreport from"../apps/customers/Salesreport"
-import Salesrevenueplan from"../apps/customers/Salesrevenueplan"
-import Salesrewardcatalogs from"../apps/customers/Salesrewardcatalogs"
-import Salesserialnumbers from"../apps/customers/Salesserialnumbers"
-import Salesservicepartners from"../apps/customers/Salesservicepartners"
-import Salesshipment from"../apps/customers/Salesshipment"
-import Salesstandardterms from"../apps/customers/Salesstandardterms"
-import Salestarget from"../apps/customers/Salestarget"
-import Salestasks from"../apps/customers/Salestasks"
-import Salestechnicians from"../apps/customers/Salestechnicians"
-import Salestenders from"../apps/customers/Salestenders"
-import Salesvisits from"../apps/customers/Salesvisits"
-import Salesvoucherclaim from"../apps/customers/Salesvoucherclaim"
-import Salesvouchermasters from"../apps/customers/Salesvouchermasters"
-import Saleswarranty from"../apps/customers/Saleswarranty"
-import Salesworkcenters from"../apps/customers/Salesworkcenters"
-import Salesserviceconfirmations from"../apps/customers/Salesserviceconfirmations"
-import Salesservicedispatching from"../apps/customers/Salesservicedispatching"
-import Salesserviceorders from"../apps/customers/Salesserviceorders"
-import Serviceordersettlement from"../apps/customers/Serviceordersettlement"
-import Servicerequest from"../apps/customers/Servicerequest"
-import Territories from"../apps/customers/Territories"
-import Territoryscopes from"../apps/customers/Territoryscopes"
-import Saleswarrantyclaim from"../apps/customers/Saleswarrantyclaim"
+import Salesfleets from"../apps/customers/Salesfleets.js"
+import Salesgroups from"../apps/customers/Salesgroups.js"
+import Salesinventoryreport from"../apps/customers/Salesinventoryreport.js"
+import Saleskpi from"../apps/customers/Saleskpi.js"
+import Saleskpireport from"../apps/customers/Saleskpireport.js"
+import Salesloyaltyprograms from"../apps/customers/Salesloyaltyprograms.js"
+import Salesmembership from"../apps/customers/Salesmembership.js"
+import Salesoffices from"../apps/customers/Salesoffices.js"
+import Salesorders from"../apps/customers/Salesorders.js"
+import Salesequipments from"../apps/customers/Salesequipments.js"
+import Salesorg from"../apps/customers/Salesorg.js"
+import Salespersons from"../apps/customers/Salespersons.js"
+import Salespricing from"../apps/customers/Salespricing.js"
+import Salesproductreport from"../apps/customers/Salesproductreport.js"
+import Salesproducts from"../apps/customers/Salesproducts.js"
+import Salesproposals from"../apps/customers/Salesproposals.js"
+import Salesquotations from"../apps/customers/Salesquotations.js"
+import Salesrecurring from"../apps/customers/Salesrecurring.js"
+import Salesreport from"../apps/customers/Salesreport.js"
+import Salesrevenueplan from"../apps/customers/Salesrevenueplan.js"
+import Salesrewardcatalogs from"../apps/customers/Salesrewardcatalogs.js"
+import Salesserialnumbers from"../apps/customers/Salesserialnumbers.js"
+import Salesservicepartners from"../apps/customers/Salesservicepartners.js"
+import Salesshipment from"../apps/customers/Salesshipment.js"
+import Salesstandardterms from"../apps/customers/Salesstandardterms.js"
+import Salestarget from"../apps/customers/Salestarget.js"
+import Salestasks from"../apps/customers/Salestasks.js"
+import Salestechnicians from"../apps/customers/Salestechnicians.js"
+import Salestenders from"../apps/customers/Salestenders.js"
+import Salesvisits from"../apps/customers/Salesvisits.js"
+import Salesvoucherclaim from"../apps/customers/Salesvoucherclaim.js"
+import Salesvouchermasters from"../apps/customers/Salesvouchermasters.js"
+import Saleswarranty from"../apps/customers/Saleswarranty.js"
+import Salesworkcenters from"../apps/customers/Salesworkcenters.js"
+import Salesserviceconfirmations from"../apps/customers/Salesserviceconfirmations.js"
+import Salesservicedispatching from"../apps/customers/Salesservicedispatching.js"
+import Salesserviceorders from"../apps/customers/Salesserviceorders.js"
+import Serviceordersettlement from"../apps/customers/Serviceordersettlement.js"
+import Servicerequest from"../apps/customers/Servicerequest.js"
+import Territories from"../apps/customers/Territories.js"
+import Territoryscopes from"../apps/customers/Territoryscopes.js"
+import Saleswarrantyclaim from"../apps/customers/Saleswarrantyclaim.js"
 
 //Suppliers
-import Purchaseorg from "../apps/suppliers/Purchaseorg"
-import Buyergroups from "../apps/suppliers/Buyergroups"
-import Buyerpersons from "../apps/suppliers/Buyerpersons"
-import Procurementcommittee from "../apps/suppliers/Procurementcommittee"
-import Purchaseproducts from "../apps/suppliers/Purchaseproducts"
-import Purchasecatalogs from "../apps/suppliers/Purchasecatalogs"
-import Purchasepricing from "../apps/suppliers/Purchasepricing"
-import Vendorlist from "../apps/suppliers/Vendorlist"
-import Purchasebom from "../apps/suppliers/Purchasebom"
-import Purchasebatches from "../apps/suppliers/Purchasebatches"
-import Purchaseserialnumber from "../apps/suppliers/Purchaseserialnumber"
-import Purchaseequipments from "../apps/suppliers/Purchaseequipments"
-import Purchasewarranty from "../apps/suppliers/Purchasewarranty"
-import Purchasestandardterms from "../apps/suppliers/Purchasestandardterms"
-import Purchaseplan from "../apps/suppliers/Purchaseplan"
-import Purchasetarget from "../apps/suppliers/Purchasetarget"
-import Purchasebudget from "../apps/suppliers/Purchasebudget"
-import Purchasekpi from "../apps/suppliers/Purchasekpi"
-import purchasevouchermasters from "../apps/suppliers/purchasevouchermasters"
-import Purchasevoucherclaim from "../apps/suppliers/Purchasevoucherclaim"
-import Vendorleads from "../apps/suppliers/Vendorleads"
-import Purchasecontacts from "../apps/suppliers/Purchasecontacts"
-import Vendormasters from "../apps/suppliers/Vendormasters"
-import Purchaseservicepartners from "../apps/suppliers/Purchaseservicepartners"
-import Purchaseactivities from "../apps/suppliers/Purchaseactivities"
-import Purchasetasks from "../apps/suppliers/Purchasetasks"
-import Purchaserequisitions from "../apps/suppliers/Purchaserequisitions"
-import Purchaseselectioncriteria from "../apps/suppliers/Purchaseselectioncriteria"
-import Purchasecriteriamethod from "../apps/suppliers/Purchasecriteriamethod"
-import Purchaseselfservice from "../apps/suppliers/Purchaseselfservice"
-import Purchaserequestforquotations from "../apps/suppliers/Purchaserequestforquotations"
-import Purchaserequestforproposals from "../apps/suppliers/Purchaserequestforproposals"
-import Purchasetenders from "../apps/suppliers/Purchasetenders"
-import Purchaseorders from "../apps/suppliers/Purchaseorders"
-import Purchasecontracts from "../apps/suppliers/Purchasecontracts"
-import Purchasedeliveryorders from "../apps/suppliers/Purchasedeliveryorders"
-import Purchaseshipment from "../apps/suppliers/Purchaseshipment"
-import Purchasedeliverytracking from "../apps/suppliers/Purchasedeliverytracking"
-import Purchasevendorinvoice from "../apps/suppliers/Purchasevendorinvoice"
-import Purchasevendorinvoicestatus from "../apps/suppliers/Purchasevendorinvoicestatus"
-import Purchaseservicecases from "../apps/suppliers/Purchaseservicecases"
-import Purchaseservicerequest from "../apps/suppliers/Purchaseservicerequest"
-import Purchasewarrantyclaim from "../apps/suppliers/Purchasewarrantyclaim"
-import Purchaseserviceorders from "../apps/suppliers/Purchaseserviceorders"
-import Purchaseserviceconfirmation from "../apps/suppliers/Purchaseserviceconfirmation"
-import Purchasemembership from "../apps/suppliers/Purchasemembership"
-import Purchasekpireport from "../apps/suppliers/Purchasekpireport"
-import Purchasereport from "../apps/suppliers/Purchasereport"
-import Purchasedeliveryreport from "../apps/suppliers/Purchasedeliveryreport"
-import Purchaseinventoryreport from "../apps/suppliers/Purchaseinventoryreport"
-import Purchaseinvoicereport from "../apps/suppliers/Purchaseinvoicereport"
-import Purchasevendorreport from "../apps/suppliers/Purchasevendorreport"
-import Purchaseproductreport from "../apps/suppliers/Purchaseproductreport"
+import Purchaseorg from "../apps/suppliers/Purchaseorg.js"
+import Buyergroups from "../apps/suppliers/Buyergroups.js"
+import Buyerpersons from "../apps/suppliers/Buyerpersons.js"
+import Procurementcommittee from "../apps/suppliers/Procurementcommittee.js"
+import Purchaseproducts from "../apps/suppliers/Purchaseproducts.js"
+import Purchasecatalogs from "../apps/suppliers/Purchasecatalogs.js"
+import Purchasepricing from "../apps/suppliers/Purchasepricing.js"
+import Vendorlist from "../apps/suppliers/Vendorlist.js"
+import Purchasebom from "../apps/suppliers/Purchasebom.js"
+import Purchasebatches from "../apps/suppliers/Purchasebatches.js"
+import Purchaseserialnumber from "../apps/suppliers/Purchaseserialnumber.js"
+import Purchaseequipments from "../apps/suppliers/Purchaseequipments.js"
+import Purchasewarranty from "../apps/suppliers/Purchasewarranty.js"
+import Purchasestandardterms from "../apps/suppliers/Purchasestandardterms.js"
+import Purchaseplan from "../apps/suppliers/Purchaseplan.js"
+import Purchasetarget from "../apps/suppliers/Purchasetarget.js"
+import Purchasebudget from "../apps/suppliers/Purchasebudget.js"
+import Purchasekpi from "../apps/suppliers/Purchasekpi.js"
+import purchasevouchermasters from "../apps/suppliers/purchasevouchermasters.js"
+import Purchasevoucherclaim from "../apps/suppliers/Purchasevoucherclaim.js"
+import Vendorleads from "../apps/suppliers/Vendorleads.js"
+import Purchasecontacts from "../apps/suppliers/Purchasecontacts.js"
+import Vendormasters from "../apps/suppliers/Vendormasters.js"
+import Purchaseservicepartners from "../apps/suppliers/Purchaseservicepartners.js"
+import Purchaseactivities from "../apps/suppliers/Purchaseactivities.js"
+import Purchasetasks from "../apps/suppliers/Purchasetasks.js"
+import Purchaserequisitions from "../apps/suppliers/Purchaserequisitions.js"
+import Purchaseselectioncriteria from "../apps/suppliers/Purchaseselectioncriteria.js"
+import Purchasecriteriamethod from "../apps/suppliers/Purchasecriteriamethod.js"
+import Purchaseselfservice from "../apps/suppliers/Purchaseselfservice.js"
+import Purchaserequestforquotations from "../apps/suppliers/Purchaserequestforquotations.js"
+import Purchaserequestforproposals from "../apps/suppliers/Purchaserequestforproposals.js"
+import Purchasetenders from "../apps/suppliers/Purchasetenders.js"
+import Purchaseorders from "../apps/suppliers/Purchaseorders.js"
+import Purchasecontracts from "../apps/suppliers/Purchasecontracts.js"
+import Purchasedeliveryorders from "../apps/suppliers/Purchasedeliveryorders.js"
+import Purchaseshipment from "../apps/suppliers/Purchaseshipment.js"
+import Purchasedeliverytracking from "../apps/suppliers/Purchasedeliverytracking.js"
+import Purchasevendorinvoice from "../apps/suppliers/Purchasevendorinvoice.js"
+import Purchasevendorinvoicestatus from "../apps/suppliers/Purchasevendorinvoicestatus.js"
+import Purchaseservicecases from "../apps/suppliers/Purchaseservicecases.js"
+import Purchaseservicerequest from "../apps/suppliers/Purchaseservicerequest.js"
+import Purchasewarrantyclaim from "../apps/suppliers/Purchasewarrantyclaim.js"
+import Purchaseserviceorders from "../apps/suppliers/Purchaseserviceorders.js"
+import Purchaseserviceconfirmation from "../apps/suppliers/Purchaseserviceconfirmation.js"
+import Purchasemembership from "../apps/suppliers/Purchasemembership.js"
+import Purchasekpireport from "../apps/suppliers/Purchasekpireport.js"
+import Purchasereport from "../apps/suppliers/Purchasereport.js"
+import Purchasedeliveryreport from "../apps/suppliers/Purchasedeliveryreport.js"
+import Purchaseinventoryreport from "../apps/suppliers/Purchaseinventoryreport.js"
+import Purchaseinvoicereport from "../apps/suppliers/Purchaseinvoicereport.js"
+import Purchasevendorreport from "../apps/suppliers/Purchasevendorreport.js"
+import Purchaseproductreport from "../apps/suppliers/Purchaseproductreport.js"
 
 //Warehouse
-import Warehouselocation from "../apps/warehouse/Warehouselocation"
-import Warehousenumber from "../apps/warehouse/Warehousenumber"
-import Warehousezone from "../apps/warehouse/Warehousezone"
-import Warehouseaisle from "../apps/warehouse/Warehouseaisle"
-import Warehouserack from "../apps/warehouse/Warehouserack"
-import Warehouselevel from "../apps/warehouse/Warehouselevel"
-import Warehousebin from "../apps/warehouse/Warehousebin"
-import Warehousedesigner from "../apps/warehouse/Warehousedesigner"
-import Warehouseproducts from "../apps/warehouse/Warehouseproducts"
-import Warehousebom from "../apps/warehouse/Warehousebom"
-import Warehousebatches from "../apps/warehouse/Warehousebatches"
-import Warehouseserialnumber from "../apps/warehouse/Warehouseserialnumber"
-import Warehouseequipments from "../apps/warehouse/Warehouseequipments"
-import Warehousepurchaserequisition from "../apps/warehouse/Warehousepurchaserequisition"
-import Materialrequirementplanning from "../apps/warehouse/Materialrequirementplanning"
-import Transferrequisition from "../apps/warehouse/Transferrequisition"
-import Outboundrequisition from "../apps/warehouse/Outboundrequisition"
-import Committoreserved from "../apps/warehouse/Committoreserved"
-import Stockonhand from "../apps/warehouse/Stockonhand"
-import Stockvmi from "../apps/warehouse/Stockvmi"
-import Stockconsignment from "../apps/warehouse/Stockconsignment"
-import Stockcustomer from "../apps/warehouse/Stockcustomer"
-import Proposalofdelivery from "../apps/warehouse/Proposalofdelivery"
-import Goodsreceipt from "../apps/warehouse/Goodsreceipt"
-import Goodsissue from "../apps/warehouse/Goodsissue"
-import Proofofdelivery from "../apps/warehouse/Proofofdelivery"
-import Stocktransfer from "../apps/warehouse/Stocktransfer"
-import Qualityinspection from "../apps/warehouse/Qualityinspection"
-import Putaway from "../apps/warehouse/Putaway"
-import Picking from "../apps/warehouse/Picking"
-import Packing from "../apps/warehouse/Packing"
-import Repacking from "../apps/warehouse/Repacking"
-import Labeling from "../apps/warehouse/Labeling"
-import Relabeling from "../apps/warehouse/Relabeling"
-import Loading from "../apps/warehouse/Loading"
-import Unloading from "../apps/warehouse/Unloading"
-import Stocktaking from "../apps/warehouse/Stocktaking"
-import Stockadjustment from "../apps/warehouse/Stockadjustment"
-import Stockreturn from "../apps/warehouse/Stockreturn"
-import Goodscanceltransactions from "../apps/warehouse/Goodscanceltransactions"
-import Proposalofacceptance from "../apps/warehouse/Proposalofacceptance"
-import Serviceacceptance from "../apps/warehouse/Serviceacceptance"
-import Serviceinspection from "../apps/warehouse/Serviceinspection"
+import Warehouselocation from "../apps/warehouse/Warehouselocation.js"
+import Warehousenumber from "../apps/warehouse/Warehousenumber.js"
+import Warehousezone from "../apps/warehouse/Warehousezone.js"
+import Warehouseaisle from "../apps/warehouse/Warehouseaisle.js"
+import Warehouserack from "../apps/warehouse/Warehouserack.js"
+import Warehouselevel from "../apps/warehouse/Warehouselevel.js"
+import Warehousebin from "../apps/warehouse/Warehousebin.js"
+import Warehousedesigner from "../apps/warehouse/Warehousedesigner.js"
+import Warehouseproducts from "../apps/warehouse/Warehouseproducts.js"
+import Warehousebom from "../apps/warehouse/Warehousebom.js"
+import Warehousebatches from "../apps/warehouse/Warehousebatches.js"
+import Warehouseserialnumber from "../apps/warehouse/Warehouseserialnumber.js"
+import Warehouseequipments from "../apps/warehouse/Warehouseequipments.js"
+import Warehousepurchaserequisition from "../apps/warehouse/Warehousepurchaserequisition.js"
+import Materialrequirementplanning from "../apps/warehouse/Materialrequirementplanning.js"
+import Transferrequisition from "../apps/warehouse/Transferrequisition.js"
+import Outboundrequisition from "../apps/warehouse/Outboundrequisition.js"
+import Committoreserved from "../apps/warehouse/Committoreserved.js"
+import Stockonhand from "../apps/warehouse/Stockonhand.js"
+import Stockvmi from "../apps/warehouse/Stockvmi.js"
+import Stockconsignment from "../apps/warehouse/Stockconsignment.js"
+import Stockcustomer from "../apps/warehouse/Stockcustomer.js"
+import Proposalofdelivery from "../apps/warehouse/Proposalofdelivery.js"
+import Goodsreceipt from "../apps/warehouse/Goodsreceipt.js"
+import Goodsissue from "../apps/warehouse/Goodsissue.js"
+import Proofofdelivery from "../apps/warehouse/Proofofdelivery.js"
+import Stocktransfer from "../apps/warehouse/Stocktransfer.js"
+import Qualityinspection from "../apps/warehouse/Qualityinspection.js"
+import Putaway from "../apps/warehouse/Putaway.js"
+import Picking from "../apps/warehouse/Picking.js"
+import Packing from "../apps/warehouse/Packing.js"
+import Repacking from "../apps/warehouse/Repacking.js"
+import Labeling from "../apps/warehouse/Labeling.js"
+import Relabeling from "../apps/warehouse/Relabeling.js"
+import Loading from "../apps/warehouse/Loading.js"
+import Unloading from "../apps/warehouse/Unloading.js"
+import Stocktaking from "../apps/warehouse/Stocktaking.js"
+import Stockadjustment from "../apps/warehouse/Stockadjustment.js"
+import Stockreturn from "../apps/warehouse/Stockreturn.js"
+import Goodscanceltransactions from "../apps/warehouse/Goodscanceltransactions.js"
+import Proposalofacceptance from "../apps/warehouse/Proposalofacceptance.js"
+import Serviceacceptance from "../apps/warehouse/Serviceacceptance.js"
+import Serviceinspection from "../apps/warehouse/Serviceinspection.js"
 import Proofofservice from "../apps/warehouse/Proofofservice.js"
-import Servicecanceltransactions from "../apps/warehouse/Servicecanceltransactions"
-import Warehousekpireport from "../apps/warehouse/Warehousekpireport"
-import Fulfillmentreport from "../apps/warehouse/Fulfillmentreport"
-import Inventoryreport from "../apps/warehouse/Inventoryreport"
-import Goodsmovementreport from "../apps/warehouse/Goodsmovementreport"
-import Servicereport from "../apps/warehouse/Servicereport"
-import Warehouseproductreport from "../apps/warehouse/Warehouseproductreport"
+import Servicecanceltransactions from "../apps/warehouse/Servicecanceltransactions.js"
+import Warehousekpireport from "../apps/warehouse/Warehousekpireport.js"
+import Fulfillmentreport from "../apps/warehouse/Fulfillmentreport.js"
+import Inventoryreport from "../apps/warehouse/Inventoryreport.js"
+import Goodsmovementreport from "../apps/warehouse/Goodsmovementreport.js"
+import Servicereport from "../apps/warehouse/Servicereport.js"
+import Warehouseproductreport from "../apps/warehouse/Warehouseproductreport.js"
 
 //Settings
-import Basicdata from "../apps/settings/Basicdata"
-import Profilesetting from "../apps/settings/Profilesetting"
-import Digitalsignature from "../apps/settings/Digitalsignature"
+import Basicdata from "../apps/settings/Basicdata.js"
+import Profilesetting from "../apps/settings/Profilesetting.js"
+import Digitalsignature from "../apps/settings/Digitalsignature.js"
 
 //Administration
-import Systemid from "../apps/administration/Systemid"
-import Organizationid from "../apps/administration/Organizationid"
-import Applications from "../apps/administration/Applications"
-import Appsmarket from "../apps/administration/Appsmarket"
-import Resources from "../apps/administration/Resources"
-import Utilities from "../apps/administration/Utilities"
-import Licenses from "../apps/administration/Licenses"
-import Paymentmethod from "../apps/administration/Paymentmethod"
-import Subscriptionbilling from "../apps/administration/Subscriptionbilling"
-import Usersadministration from "../apps/administration/Usersadministration"
-import Usergroupsadministration from "../apps/administration/Usergroupsadministration"
-import Authorizationroles from "../apps/administration/Authorizationroles"
-import Authentication from "../apps/administration/Authentication"
-import Alertcenter from "../apps/administration/Alertcenter"
-import Apicontrols from "../apps/administration/Apicontrols"
+import Systemid from "../apps/administration/Systemid.js"
+import Organizationid from "../apps/administration/Organizationid.js"
+import Applications from "../apps/administration/Applications.js"
+import Appsmarket from "../apps/administration/Appsmarket.js"
+import Resources from "../apps/administration/Resources.js"
+import Utilities from "../apps/administration/Utilities.js"
+import Licenses from "../apps/administration/Licenses.js"
+import Paymentmethod from "../apps/administration/Paymentmethod.js"
+import Subscriptionbilling from "../apps/administration/Subscriptionbilling.js"
+import Usersadministration from "../apps/administration/Usersadministration.js"
+import Usergroupsadministration from "../apps/administration/Usergroupsadministration.js"
+import Authorizationroles from "../apps/administration/Authorizationroles.js"
+import Authentication from "../apps/administration/Authentication.js"
+import Alertcenter from "../apps/administration/Alertcenter.js"
+import Apicontrols from "../apps/administration/Apicontrols.js"
 
 // Pages
-import Pricing from "../pages/Pricing";
-import Faq from "../pages/Faq";
-import Profile from "../pages/Profile";
-import People from "../pages/People";
-import Activity from "../pages/Activity";
-import Events from "../apps/networks/Events";
-import Settings from "../pages/Settings";
+import Pricing from "../pages/Pricing.js";
+import Faq from "../pages/Faq.js";
+import Profile from "../pages/Profile.js";
+import People from "../pages/People.js";
+import Activity from "../pages/Activity.js";
+import Events from "../apps/networks/Events.js";
+import Settings from "../pages/Settings.js";
 
 // UI Elements
-import LayoutColumns from "../docs/LayoutColumns";
-import LayoutGrid from "../docs/LayoutGrid";
-import LayoutGutters from "../docs/LayoutGutters";
-import Accordions from "../docs/Accordions";
-import Alerts from "../docs/Alerts";
-import Avatars from "../docs/Avatars";
-import Badges from "../docs/Badges";
-import Breadcrumbs from "../docs/Breadcrumbs";
-import Buttons from "../docs/Buttons";
-import Cards from "../docs/Cards";
-import Carousels from "../docs/Carousels";
-import Dropdowns from "../docs/Dropdowns";
-import Images from "../docs/Images";
-import Listgroup from "../docs/Listgroup";
-import Markers from "../docs/Markers";
-import Modals from "../docs/Modals";
-import NavTabs from "../docs/NavTabs";
-import OffCanvas from "../docs/OffCanvas";
-import Paginations from "../docs/Paginations";
-import Placeholders from "../docs/Placeholders";
-import Popovers from "../docs/Popovers";
-import Progress from "../docs/Progress";
-import Spinners from "../docs/Spinners";
-import Toasts from "../docs/Toasts";
-import Tooltips from "../docs/Tooltips";
-import Tables from "../docs/Tables";
-import FormElements from "../docs/FormElements";
-import FormSelects from "../docs/FormSelects";
-import FormChecksRadios from "../docs/FormChecksRadios";
-import FormRange from "../docs/FormRange";
-import FormPickers from "../docs/FormPickers";
-import FormLayouts from "../docs/FormLayouts";
-import UtilBackground from "../docs/UtilBackground";
-import UtilBorder from "../docs/UtilBorder";
-import UtilColors from "../docs/UtilColors";
-import UtilDivider from "../docs/UtilDivider";
-import UtilFlex from "../docs/UtilFlex";
-import UtilSizing from "../docs/UtilSizing";
-import UtilSpacing from "../docs/UtilSpacing";
-import UtilOpacity from "../docs/UtilOpacity";
-import UtilPosition from "../docs/UtilPosition";
-import UtilTypography from "../docs/UtilTypography";
-import UtilShadows from "../docs/UtilShadows";
-import UtilExtras from "../docs/UtilExtras";
-import ApexCharts from "../docs/ApexCharts";
-import ChartJs from "../docs/ChartJs";
-import MapLeaflet from "../docs/MapLeaflet";
-import MapVector from "../docs/MapVector";
-import IconRemix from "../docs/IconRemix";
-import IconFeather from "../docs/IconFeather";
+import LayoutColumns from "../docs/LayoutColumns.js";
+import LayoutGrid from "../docs/LayoutGrid.js";
+import LayoutGutters from "../docs/LayoutGutters.js";
+import Accordions from "../docs/Accordions.js";
+import Alerts from "../docs/Alerts.js";
+import Avatars from "../docs/Avatars.js";
+import Badges from "../docs/Badges.js";
+import Breadcrumbs from "../docs/Breadcrumbs.js";
+import Buttons from "../docs/Buttons.js";
+import Cards from "../docs/Cards.js";
+import Carousels from "../docs/Carousels.js";
+import Dropdowns from "../docs/Dropdowns.js";
+import Images from "../docs/Images.js";
+import Listgroup from "../docs/Listgroup.js";
+import Markers from "../docs/Markers.js";
+import Modals from "../docs/Modals.js";
+import NavTabs from "../docs/NavTabs.js";
+import OffCanvas from "../docs/OffCanvas.js";
+import Paginations from "../docs/Paginations.js";
+import Placeholders from "../docs/Placeholders.js";
+import Popovers from "../docs/Popovers.js";
+import Progress from "../docs/Progress.js";
+import Spinners from "../docs/Spinners.js";
+import Toasts from "../docs/Toasts.js";
+import Tooltips from "../docs/Tooltips.js";
+import Tables from "../docs/Tables.js";
+import FormElements from "../docs/FormElements.js";
+import FormSelects from "../docs/FormSelects.js";
+import FormChecksRadios from "../docs/FormChecksRadios.js";
+import FormRange from "../docs/FormRange.js";
+import FormPickers from "../docs/FormPickers.js";
+import FormLayouts from "../docs/FormLayouts.js";
+import UtilBackground from "../docs/UtilBackground.js";
+import UtilBorder from "../docs/UtilBorder.js";
+import UtilColors from "../docs/UtilColors.js";
+import UtilDivider from "../docs/UtilDivider.js";
+import UtilFlex from "../docs/UtilFlex.js";
+import UtilSizing from "../docs/UtilSizing.js";
+import UtilSpacing from "../docs/UtilSpacing.js";
+import UtilOpacity from "../docs/UtilOpacity.js";
+import UtilPosition from "../docs/UtilPosition.js";
+import UtilTypography from "../docs/UtilTypography.js";
+import UtilShadows from "../docs/UtilShadows.js";
+import UtilExtras from "../docs/UtilExtras.js";
+import ApexCharts from "../docs/ApexCharts.js";
+import ChartJs from "../docs/ChartJs.js";
+import MapLeaflet from "../docs/MapLeaflet.js";
+import MapVector from "../docs/MapVector.js";
+import IconRemix from "../docs/IconRemix.js";
+import IconFeather from "../docs/IconFeather.js";
 
 const protectedRoutes = [
   { path: "dashboard/finance", element: <FinanceMonitoring /> },

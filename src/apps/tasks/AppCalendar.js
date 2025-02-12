@@ -6,8 +6,8 @@ import { Button, Col, Form, Modal, Nav, Row } from "react-bootstrap";
 import ReactDatePicker from "react-datepicker";
 import Avatar from "../../components/Avatar";
 import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from '@fullcalendar/timegrid'
+import dayGridPlugin from "@fullcalendar/daygrid/index.js";
+import timeGridPlugin from '@fullcalendar/timegrid/index.js'
 
 import {
   calendarEvents,
