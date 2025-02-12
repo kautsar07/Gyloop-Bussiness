@@ -389,7 +389,7 @@ export default function Systemid() {
                       isSearchable={true}
                       isDisabled={show === "Edit" ? false : true}
                       className=" react-select-custom"
-                      defaultValue={selectSystemType[0]}
+                      defaultValue={[{value:dataTableSystemId[1].type_sytm, label:dataTableSystemId[0].type_sytm}]}
                     />
                   </div>
 
@@ -421,6 +421,7 @@ export default function Systemid() {
                         type="text"
                         placeholder="Created By"
                         disabled={show === "Edit" ? false : true}
+                        defaultValue={dataTableSystemId[0].crdt_by}
                       />
                     </Col>
                   </div>
@@ -440,6 +441,7 @@ export default function Systemid() {
                       type="text"
                       placeholder="System URL"
                       disabled={show === "Edit" ? false : true}
+                      defaultValue={dataTableSystemId[0].urll_sytm}
                     />
                   </div>
                 </Col>
@@ -474,21 +476,21 @@ export default function Systemid() {
             <Table className="mb-0">
               <thead>
                 <tr>
-                  <th scope="col">System ID</th>
-                  <th scope="col">System Type</th>
-                  <th scope="col">System Type Date</th>
-                  <th scope="col">Created By</th>
-                  <th scope="col">Sytem URL</th>
+                  <th scope="col" style={{width: '200px'}}>System ID</th>
+                  <th scope="col" style={{width: '200px'}}>System Type</th>
+                  <th scope="col" style={{width: '200px'}}>System Type Date</th>
+                  <th scope="col" style={{width: '200px'}}>Created By</th>
+                  <th scope="col" style={{width: '200px'}}>Sytem URL</th>
                 </tr>
               </thead>
               <tbody>
                 {dataTableSystemId.map((item, i) => (
                   <tr key={i}>
-                    <th scope="row">{item.id_sytm}</th>
-                    <td>{item.type_sytm}</td>
-                    <td>{item.crdt_at}</td>
-                    <td>{item.crdt_by}</td>
-                    <td>{item.urll_sytm}</td>
+                    <th scope="row"> <div style={{width:200}}>{item.id_sytm}</div></th>
+                    <td><div style={{width:200}}>{item.type_sytm}</div></td>
+                    <td><div style={{width:200}}>{item.crdt_at}</div></td>
+                    <td><div style={{width:200}}>{item.crdt_by}</div></td>
+                    <td><div style={{width:200}}>{item.urll_sytm}</div></td>
                   </tr>
                 ))}
               </tbody>

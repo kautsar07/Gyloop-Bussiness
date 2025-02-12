@@ -17,6 +17,7 @@
   &:disabled{
     background-color: hsl(0, 0%, 95%);
     cursor: not-allowed;
+    color: hsl(0, 0%, 60%);
   }
   &::placeholder {
     color: $gray-500;
