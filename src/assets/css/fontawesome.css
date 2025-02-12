@@ -17,6 +17,18 @@
   }
 
   @font-face {
+    font-family: "fontawesome-regular-small";
+    src: url('../fonts/fontawesome/fa-regular-400.eot');
+    src: url('../fonts/fontawesome/fa-regular-400.eot') format('embedded-opentype'), 
+    url("../fonts/fontawesome/fa-regular-400.woff2") format("woff2"),
+    url("../fonts/fontawesome/fa-regular-400.woff") format("woff"),
+    url('../fonts/fontawesome/fa-regular-400.ttf') format('truetype'),
+    url('../fonts/fontawesome/fa-regular-400.svg') format('svg');
+    font-display: swap;
+  
+  }  
+
+  @font-face {
     font-family: "fontawesome-solid";
     src: url('../fonts/fontawesome/fa-solid-900.eot');
     src: url('../fonts/fontawesome/fa-solid-900.eot') format('embedded-opentype'), 
@@ -73,6 +85,15 @@
   [class^="far-"], [class*=" far-"] {
     font-family: 'fontawesome-regular' !important;
     font-size: 1.2em !important;
+    font-style: normal;
+    font-size-adjust: unset;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  [class^="fars-"], [class*=" fars-"] {
+    font-family: 'fontawesome-regular-small' !important;
+    font-size: 1em !important;
     font-style: normal;
     font-size-adjust: unset;
     -webkit-font-smoothing: antialiased;
@@ -396,6 +417,7 @@
   .far-pen-to-square:before {content:"\f044";}
   .fas-pen-to-square:before {content:"\f044";}
   .fal-pen-to-square:before {content:"\f044";}
+  .fars-pen-to-square:before {content:"\f044";}
   
 
 

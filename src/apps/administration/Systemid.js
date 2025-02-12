@@ -8,21 +8,7 @@ import ReactDatePicker from "react-datepicker";
 import { SketchPicker } from "react-color";
 import "../../assets/css/react-datepicker.min.css";
 
-import img6 from "../../assets/img/img6.jpg";
-import img7 from "../../assets/img/img7.jpg";
-import img8 from "../../assets/img/img8.jpg";
-import img9 from "../../assets/img/img9.jpg";
-import img10 from "../../assets/img/img10.jpg";
-import img11 from "../../assets/img/img11.jpg";
-import img12 from "../../assets/img/img12.jpg";
-import img13 from "../../assets/img/img13.jpg";
-import img14 from "../../assets/img/img14.jpg";
-import img15 from "../../assets/img/img15.jpg";
-import img16 from "../../assets/img/img16.jpg";
-import img17 from "../../assets/img/img17.jpg";
-import img18 from "../../assets/img/img18.jpg";
-import img19 from "../../assets/img/img19.jpg";
-import { marker } from "leaflet";
+
 import { dataTableSystemId } from "../../data/apps/administration/org-system/system-id";
 
 export default function Systemid() {
@@ -36,201 +22,7 @@ export default function Systemid() {
       document.body.classList.remove("page-app");
     };
   }, []);
-
-  const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
-    <Link
-      to=""
-      ref={ref}
-      onClick={(e) => {
-        e.preventDefault();
-        onClick(e);
-      }}
-      className="header-link"
-    >
-      {children}
-    </Link>
-  ));
-
-  const chatGroup = [
-    {
-      unread: true,
-      avatar: {
-        status: "offline",
-        img: img11,
-      },
-      sender: "Dyanne Aceron",
-      time: "10:35am",
-      text: "Hi Hello! My name is Dyanne Aceron. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
-    },
-    {
-      selected: true,
-      avatar: {
-        status: "online",
-        img: img14,
-      },
-      sender: "Leo Mendez",
-      time: "1d",
-      text: "There are many variations of pass. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia",
-    },
-    {
-      unread: true,
-      avatar: {
-        status: "online",
-        img: img15,
-      },
-      sender: "Meriam Salomon",
-      time: "2d",
-      text: "Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      avatar: {
-        status: "online",
-        img: img17,
-      },
-      sender: "Rolando Paloso",
-      time: "2d",
-      text: "There are many variations of paserror sit voluptatem accusantium doloremque laudantium, totam rem aperiam",
-    },
-    {
-      avatar: {
-        status: "offline",
-        img: img19,
-      },
-      sender: "Marianne Audrey",
-      time: "5d",
-      text: "Hi Hello! There are many variations ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit",
-    },
-    {
-      avatar: {
-        status: "offline",
-        img: img6,
-      },
-      sender: "Adrian Moniño",
-      time: "1w",
-      text: "Lorem ipsum is simply dummy text sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt",
-    },
-    {
-      unread: true,
-      avatar: {
-        status: "offline",
-        img: img7,
-      },
-      sender: "Andrew Ylaya",
-      time: "1w",
-      text: "It is a long established fact that aquis autem vel eum iure reprehenderit qui in ea voluptate velit esse",
-    },
-    {
-      avatar: {
-        status: "online",
-        img: img8,
-      },
-      sender: "Maricel Villalon",
-      time: "2w",
-      text: "Hello!, I will be distracted by the requam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur",
-    },
-    {
-      avatar: {
-        status: "online",
-        img: img10,
-      },
-      sender: "Warren Vito",
-      time: "3w",
-      text: "There are many variations of passc up iditate non provident, similique sunt in culpa",
-    },
-    {
-      unread: true,
-      avatar: {
-        status: "offline",
-        img: img11,
-      },
-      sender: "Lovely Ceballos",
-      time: "6w",
-      text: "Hello!, I will be distracted by the replaceat facere possimus, omnis voluptas assumenda",
-    },
-  ];
-
-  const messageGroup = [
-    {
-      date: "August 20, 2023",
-      items: [
-        {
-          avatar: {
-            status: "online",
-            img: img16,
-          },
-          messages: [
-            {
-              text: "Excepteur sint occaecat cupidatat non proident",
-              time: "8:45pm",
-            },
-            {
-              text: "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.",
-              time: "9:15pm",
-            },
-          ],
-        },
-        {
-          reverse: true,
-          messages: [
-            {
-              text: "Neque porro quisquam est, qui dolorem ipsum",
-              time: "9:20pm",
-            },
-            {
-              text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accus",
-              time: "9:21pm",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      date: "Today",
-      items: [
-        {
-          avatar: {
-            status: "online",
-            img: img16,
-          },
-          messages: [
-            {
-              text: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-              time: "10:30am",
-            },
-          ],
-        },
-        {
-          reverse: true,
-          messages: [
-            {
-              text: "Accusantium doloremque laudantium",
-              time: "10:40am",
-            },
-            {
-              text: "Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo...",
-              time: "10:41am",
-            },
-          ],
-        },
-        {
-          avatar: {
-            status: "online",
-            img: img16,
-          },
-          messages: [
-            {
-              text: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit...",
-              time: "10:45am",
-            },
-            {
-              text: "Nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?",
-              time: "10:47am",
-            },
-          ],
-        },
-      ],
-    },
-  ];
+  
 
   const [chatActive, setChatActive] = useState(1);
   const [msgShow, setMsgShow] = useState(false);
@@ -298,7 +90,7 @@ export default function Systemid() {
             >
               <i
                 className={` ${
-                  show === "Edit" ? "far-pen-to-square" : "far-glasses"
+                  show === "Edit" ? "fars-pen-to-square" : "far-glasses"
                 }`}
                 style={{ fontSize: 14 }}
               ></i>
