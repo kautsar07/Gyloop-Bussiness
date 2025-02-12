@@ -117,3 +117,41 @@ Contact: themepixels@gmail.com
 .react-select-custom .css-13cymwt-control{
     border-color: #e2e5ec;
 }
+
+.custom-table{
+    padding: 0px 0px 0px 30px;
+    overflow: auto;
+    height: 250px;
+    margin-right: 30px;
+}
+.custom-table .table tbody tr th, .custom-table .table tbody tr td {
+    background-color: transparent;
+}
+
+.custom-table table thead
+{
+    position: sticky;
+    top: 0;
+}
+
+
+.button-action{
+    height: $height-header;
+    position: fixed;
+    left: 250px;
+    bottom: 0px;
+    right: 0px;
+    background: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding: 0px 30px;
+    box-shadow: 
+    0 1px 2px rgba(195.1329545455, 202.1761363636, 211.5670454545, 0.07), 
+    0 2px 4px rgba(195.1329545455, 202.1761363636, 211.5670454545, 0.07), 
+    0 4px 8px rgba(195.1329545455, 202.1761363636, 211.5670454545, 0.07), 
+    0 8px 16px rgba(195.1329545455, 202.1761363636, 211.5670454545, 0.07), 
+    0 16px 32px rgba(195.1329545455, 202.1761363636, 211.5670454545, 0.07), 
+    0 32px 64px rgba(195.1329545455, 202.1761363636, 211.5670454545, 0.07);
+}
