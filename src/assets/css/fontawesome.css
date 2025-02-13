@@ -424,6 +424,31 @@
   .fas-file-excel:before {content:"\f1c3";}
   .fal-file-excel:before {content:"\f1c3";}
   .fars-file-excel:before {content:"\f1c3";}
+  /* icon: cloud-arrow-down */
+  .far-cloud-arrow-down:before {content:"\f0ed";}
+  .fas-cloud-arrow-down:before {content:"\f0ed";}
+  .fal-cloud-arrow-down:before {content:"\f0ed";}
+  .fars-cloud-arrow-down:before {content:"\f0ed";}
+  /* icon: color-palette */
+  .far-color-palette:before {content:"\f53f";}
+  .fas-color-palette:before {content:"\f53f";}
+  .fal-color-palette:before {content:"\f53f";}
+  .fars-color-palette:before {content:"\f53f";}
+  /* icon: layer-group */
+  .far-layer-group:before {content:"\f5fd";}
+  .fas-layer-group:before {content:"\f5fd";}
+  .fal-layer-group:before {content:"\f5fd";}
+  .fars-layer-group:before {content:"\f5fd";}
+  /* icon: sort-amount-up */
+  .far-sort-amount-up:before {content:"\f161";}
+  .fas-sort-amount-up:before {content:"\f161";}
+  .fal-sort-amount-up:before {content:"\f161";}
+  .fars-sort-amount-up:before {content:"\f161";}
+  /* icon: filter */
+  .far-filter:before {content:"\f0b0";}
+  .fas-filter:before {content:"\f0b0";}
+  .fal-filter:before {content:"\f0b0";}
+  .fars-filter:before {content:"\f0b0";}
   
 
 

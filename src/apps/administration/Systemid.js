@@ -288,10 +288,10 @@ export default function Systemid() {
           </div>
           <div className="custom-table">
             <div className="header-table-custom">
-              <h6 style={{ fontWeight: "bold", fontSize: "16px", margin:0 }}>
-                Showing {dataTableSystemId.length} results
+              <h6 style={{ fontWeight: "500", fontSize: "16px", margin:0 }}>
+                Showing <span style={{ fontWeight: "bold"}}> {dataTableSystemId.length} </span> to <span style={{ fontWeight: "bold"}}> {dataTableSystemId.length} </span> of <span style={{ fontWeight: "bold"}}> {dataTableSystemId.length} </span> results
               </h6>
-              <div style={{ display: "flex", gap: 15 }}>
+              <div style={{ display: "flex", gap: 8 }}>
                 <Button
                   variant=""
                   className="btn-white d-flex align-items-center gap-2"
@@ -357,7 +357,7 @@ export default function Systemid() {
             </Table>
           </div>
         </div>
-        <div style={{ paddingBottom: 70 }}>
+        <div style={{ paddingBottom: 60 }}>
           <Footer />
         </div>
       </div>
