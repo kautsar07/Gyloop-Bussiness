@@ -61,7 +61,7 @@
   }
 }
 
-.btn-primary{
+.button-action .btn-primary{
   border: 1px solid $color-ui-01;
   background-color: $color-ui-01;
   width: 90px;
@@ -69,7 +69,7 @@
   justify-content: center;
   align-items: center;
 }
-.btn-danger{
+.button-action .btn-danger{
   color: white;
   border: 1px solid $danger;
   background-color: $danger;

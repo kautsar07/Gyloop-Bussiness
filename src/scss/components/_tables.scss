@@ -2,9 +2,10 @@
   thead th {
     font-weight: $font-weight-semibold;
     font-size: $font-size-sm;
+    background-color: #f3f5f9;;
   }
 
-  tbody th { font-weight: $font-weight-semibold; }
+  tbody th { font-weight:normal; }
 
   &:not(.table-borderless) {
     > :not(:first-child) {

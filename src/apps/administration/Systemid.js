@@ -4,7 +4,7 @@ import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
 import { Button, Col, Dropdown, Nav, Row, Form, Table } from "react-bootstrap";
 import Select from "react-select";
-import ReactDatePicker from "react-datepicker";
+import DatePicker from "react-datepicker";
 import { SketchPicker } from "react-color";
 import "../../assets/css/react-datepicker.min.css";
 
@@ -192,12 +192,13 @@ export default function Systemid() {
                     <Form.Label className="form-label-custom">
                       System Type
                     </Form.Label>
-                    <Col>
-                      <ReactDatePicker
+                    <Col className="custom-form-control">
+                      <DatePicker
                         selected={startDate2}
                         onChange={(date) => setStartDate2(date)}
                         className="form-control"
                         disabled={show === "Edit" ? false : true}
+                        dateFormat='dd MMMM yyyy'
                       />
                     </Col>
                   </div>
@@ -209,7 +210,7 @@ export default function Systemid() {
                     >
                       Created By
                     </Form.Label>
-                    <Col>
+                    <Col className=" custom-form-control">
                       <Form.Control
                         id="crdt_by"
                         className="mb-2"
@@ -223,7 +224,7 @@ export default function Systemid() {
                 </Col>
 
                 <Col>
-                  <div className="mb-1">
+                  <div className="mb-4">
                     <Form.Label
                       className="f-1 form-label-custom"
                       htmlFor="System URL"
@@ -287,7 +288,7 @@ export default function Systemid() {
           </div>
           <div className="custom-table">
             <div className="header-table-custom">
-              <h6 style={{ fontWeight: "bold", fontSize: "16px" }}>
+              <h6 style={{ fontWeight: "bold", fontSize: "16px", margin:0 }}>
                 Showing {dataTableSystemId.length} results
               </h6>
               <div style={{ display: "flex", gap: 15 }}>
