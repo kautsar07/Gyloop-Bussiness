@@ -28,8 +28,8 @@ export default function Salesproducts() {
         <div className="chat-panel">
           <div className="custom-table">
             <div className="header-table-custom">
-              <h6 style={{ fontWeight: "bold", fontSize: "16px", margin: 0 }}>
-                Showing {dataTableSystemId.length} results
+              <h6 style={{ fontWeight: "500", fontSize: "16px", margin:0 }}>
+                  Showing <span style={{ fontWeight: "bold"}}> {dataTableSystemId.length} </span> to <span style={{ fontWeight: "bold"}}> {dataTableSystemId.length} </span> of <span style={{ fontWeight: "bold"}}> {dataTableSystemId.length} </span> results
               </h6>
               <div style={{ display: "flex", gap: 8 }}>
                 <Button
@@ -62,7 +62,7 @@ export default function Salesproducts() {
                 >
                   <i className="fars-cloud-arrow-down"></i>
                 </Button>
-                <Dropdown className="dropdown-company" align="end">
+                {/* <Dropdown className="dropdown-company" align="end">
                   <Dropdown.Toggle as={CustomToggle}>
                     <div className="avatar online">
                       <img src={userAvatar} alt="" />
@@ -79,7 +79,6 @@ export default function Salesproducts() {
                       </p>
 
                       <nav className="nav">
-                        {/* <Link to=""><i className="ri-edit-2-line"></i> Edit Profile</Link> */}
                         <Link to="">
                           <i className="ri-profile-line"></i> View Profile
                         </Link>
@@ -89,7 +88,6 @@ export default function Salesproducts() {
                         <Link to="">
                           <i className="ri-question-line"></i> Help Center
                         </Link>
-                        {/* <Link to=""><i className="ri-lock-line"></i> Privacy Settings</Link> */}
                         <Link to="">
                           <i className="ri-user-settings-line"></i> Account
                           Settings
@@ -100,7 +98,7 @@ export default function Salesproducts() {
                       </nav>
                     </div>
                   </Dropdown.Menu>
-                </Dropdown>
+                </Dropdown> */}
                 <div style={{ position: "relative" }}>
                   <input
                     type="text"
