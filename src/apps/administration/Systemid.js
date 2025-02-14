@@ -1,3 +1,5 @@
+// Tables: system.config
+
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../layouts/Header";
@@ -10,9 +12,11 @@ import "../../assets/css/react-datepicker.min.css";
 import { createRoot } from "react-dom/client";
 
 import {
+  systemid_config,
   dataTableSystemId,
   dataTableSystemIdGrid,
-} from "../../data/apps/administration/system-id";
+
+} from "../../data/administration/DataSystemid";
 import { Grid } from "gridjs-react";
 
 export default function Systemid() {
@@ -53,12 +57,22 @@ export default function Systemid() {
     e.target.closest(".row").classList.toggle("nav-show");
   };
 
+  // Selection for Deplyment Source
+  const selectDeploymentSources = [
+    ...new Set(
+      systemid_config
+        .map(item => item.name_sytm)
+        .filter(source => source !== "N/A")
+    )
+  ].map(source => ({ value: source, label: source }));
+
+
   const selectSystemType = [
     {
       value: "Development",
       label: (
         <>
-          <i className=" far-server" style={{ marginRight: 5 }}></i>Development
+          <i className=" fars-database" style={{ marginRight: 5 }}></i>Development
         </>
       ),
     },
@@ -66,7 +80,15 @@ export default function Systemid() {
       value: "Testing",
       label: (
         <>
-          <i className=" far-server" style={{ marginRight: 5 }}></i>Testing
+          <i className=" fars-database" style={{ marginRight: 5 }}></i>Testing
+        </>
+      ),
+    },
+    {
+      value: "Training",
+      label: (
+        <>
+          <i className=" fars-database" style={{ marginRight: 5 }}></i>Testing
         </>
       ),
     },
@@ -74,15 +96,36 @@ export default function Systemid() {
       value: "Production",
       label: (
         <>
-          <i className=" far-server" style={{ marginRight: 5 }}></i>Production
+          <i className=" fars-database" style={{ marginRight: 5 }}></i>Production
         </>
       ),
     },
   ];
+
+  const selectBoolean = [
+    {
+      value: "Yes",
+      label: (
+        <>
+          Yes
+        </>
+      ),
+    },
+    {
+      value: "No",
+      label: (
+        <>
+          No
+        </>
+      ),
+    },
+    
+  ];
+
   const Excel = () => {
     return (
       <Button id="excel-container" variant="" className="btn-white d-flex align-items-center gap-2">
-        <i className="fars-file-excel"></i>
+        <i className="far-file-spreadsheet"></i>
       </Button>
     );
   };
@@ -111,6 +154,7 @@ export default function Systemid() {
               {show === "Edit" ? "Edit" : "Display"} System ID Configuration
             </h4>
           </div>
+
           <div className="d-flex gap-2 mt-3 mt-md-0">
             <Button
               onClick={() =>
@@ -184,7 +228,9 @@ export default function Systemid() {
           <div className="main-panel-config">
             <div style={{ marginTop: 10, padding: 0 }}>
               <Row className=" Row-SystemId">
+                {/* //Coumn 1 */}
                 <Col>
+                  {/* // System ID */}
                   <div className="mb-4">
                     <Form.Label
                       className="f-1 form-label-custom"
@@ -194,14 +240,15 @@ export default function Systemid() {
                     </Form.Label>
                     <Form.Control
                       required
-                      id="id_sytm"
+                      id="idno_systm"
                       type="text"
-                      placeholder="Generated Number from the Systems"
+                      placeholder="Generated number from the systems"
                       disabled={show === "Edit" ? false : true}
-                      defaultValue={dataTableSystemId[0].id_sytm}
+                      defaultValue={systemid_config[0].idno_systm}
                     />
                   </div>
 
+                  {/* // System Type */}
                   <div className="mb-4">
                     <Form.Label className="form-label-custom">
                       System Type
@@ -214,14 +261,71 @@ export default function Systemid() {
                       className=" react-select-custom"
                       defaultValue={[
                         {
-                          value: dataTableSystemId[1].type_sytm,
-                          label: dataTableSystemId[0].type_sytm,
+                          value: systemid_config[1].type_sytm,
+                          label: systemid_config[0].type_sytm,
                         },
                       ]}
                     />
                   </div>
 
+                  {/* // System Name */}
                   <div className="mb-4">
+                    <Form.Label
+                      className="f-1 form-label-custom"
+                      htmlFor="System Name"
+                    >
+                      System Name
+                    </Form.Label>
+                    <Col className=" custom-form-control">
+                      <Form.Control
+                        required
+                        id="name_sytm"
+                        type="text"
+                        placeholder="Please input System Name"
+                        disabled={show === "Edit" ? false : true}
+                        defaultValue={systemid_config[0].name_sytm}
+                      />
+                    </Col>
+                  </div>
+
+
+                   {/* // System URL */}
+                   <div className="mb-4">
+                    <Form.Label
+                      className="f-1 form-label-custom"
+                      htmlFor="System URL"
+                    >
+                      System URL
+                    </Form.Label>
+                    <Form.Control
+                      required
+                      id="addr_sytm"
+                      type="text"
+                      placeholder="Generated URL from the systems"
+                      disabled={show === "Edit" ? false : true}
+                      defaultValue={systemid_config[0].addr_sytm}
+                    />
+                  </div>
+
+                  {/* // System IP */}
+                  <div className="mb-4">
+                    <Form.Label
+                      className="f-1 form-label-custom"
+                      htmlFor="System IP"
+                    >
+                      System IP
+                    </Form.Label>
+                    <Form.Control
+                      required
+                      id="ip_sytm"
+                      type="text"
+                      placeholder="Generated IP from the systems"
+                      disabled={show === "Edit" ? false : true}
+                      defaultValue={systemid_config[0].ip_sytm}
+                    />
+                  </div>
+
+                  {/* <div className="mb-4">
                     <Form.Label className="form-label-custom">
                       System Type
                     </Form.Label>
@@ -234,48 +338,122 @@ export default function Systemid() {
                         dateFormat="dd MMMM yyyy"
                       />
                     </Col>
-                  </div>
+                  </div> */}
+                  
+                </Col>
 
+                {/* //Coumn 2 */}     
+                <Col>
+                  {/* // Is Default System? */}
                   <div className="mb-4">
-                    <Form.Label
-                      className="f-1 form-label-custom"
-                      htmlFor="Created By"
-                    >
-                      Created By
+                    <Form.Label className="form-label-custom">
+                    Is Default System?
                     </Form.Label>
                     <Col className=" custom-form-control">
-                      <Form.Control
-                        id="crdt_by"
-                        className="mb-2"
-                        type="text"
-                        placeholder="Created By"
-                        disabled={show === "Edit" ? false : true}
-                        defaultValue={dataTableSystemId[0].crdt_by}
+                      <Select
+                        id="is_deft"
+                        options={selectBoolean}
+                        isSearchable={true}
+                        isDisabled={show === "Edit" ? false : true}
+                        className=" react-select-custom"
+                        defaultValue={[
+                          {
+                            value: systemid_config[1].is_deft,
+                            label: systemid_config[0].is_deft,
+                          },
+                        ]}
                       />
                     </Col>
                   </div>
-                </Col>
 
-                <Col>
+                  {/* // Is Master Systems? */}
+                  <div className="mb-4">
+                    <Form.Label className="form-label-custom">
+                    Is Master System?
+                    </Form.Label>
+                    <Col className=" custom-form-control">
+                      <Select
+                        id="is_mstr"
+                        options={selectBoolean}
+                        isSearchable={true}
+                        isDisabled={show === "Edit" ? false : true}
+                        className=" react-select-custom"
+                        defaultValue={[
+                          {
+                            value: systemid_config[1].is_mstr,
+                            label: systemid_config[0].is_mstr,
+                          },
+                        ]}
+                      />
+                    </Col>
+                  </div>      
+
+                   {/* // Deployment Source */}
+                   <div className="mb-4">
+                    <Form.Label
+                      className="f-1 form-label-custom"
+                      htmlFor="Deployment Source Systems"
+                    >
+                      Deployment Source Systems
+                    </Form.Label>
+                    <Col className=" custom-form-control">
+                      <Select
+                        id="deployment-select"
+                        options={selectDeploymentSources}
+                        isSearchable={true}
+                        isDisabled={show === "Edit" ? false : true}
+                        className="react-select-custom"
+                        defaultValue={{
+                          value: systemid_config[1].sorc_depl,
+                          label: systemid_config[0].sorc_depl,
+                        }}
+                      />
+                      </Col>
+                  </div>
+
+                  {/* // Super Admin ID */}
                   <div className="mb-4">
                     <Form.Label
                       className="f-1 form-label-custom"
-                      htmlFor="System URL"
+                      htmlFor="Super Admin ID"
                     >
-                      System URL
+                      Super Admin ID
                     </Form.Label>
                     <Form.Control
-                      id="urll_sytm"
-                      // className="mb-2"
+                      required
+                      id="idno_sadm"
                       type="text"
-                      placeholder="System URL"
+                      placeholder="Please input Super Admin ID"
                       disabled={show === "Edit" ? false : true}
-                      defaultValue={dataTableSystemId[0].urll_sytm}
+                      defaultValue={systemid_config[0].idno_sadm}
                     />
                   </div>
+
+                  
+
+                  {/* // Registered Date & Time */}
+                  <div className="mb-4">
+                    <Form.Label
+                      className="f-1 form-label-custom"
+                      htmlFor="Registered Date"
+                    >
+                      Registered Date
+                    </Form.Label>
+                    <Form.Control
+                      required
+                      id="date_time_regs"
+                      type="text"
+                      placeholder="Generated date & time from the systems"
+                      disabled={show === "Edit" ? false : true}
+                      defaultValue={`${systemid_config[0].date_regs}, ${systemid_config[0].time_regs}`}
+                    />
+                  </div>
+
                 </Col>
+
+                {/* //Coumn 3 */}
                 <Col>
-                  <div className="mb-1">
+                  {/* <div className="mb-1">
                     <Form.Label
                       className="f-1 form-label-custom"
                       htmlFor="System URL"
@@ -290,34 +468,13 @@ export default function Systemid() {
                       disabled={show === "Edit" ? false : true}
                       defaultValue={dataTableSystemId[0].urll_sytm}
                     />
-                  </div>
+                  </div> */}
                 </Col>
-                {/* <Col sm>
-                            <Form.Control type="text" placeholder="State" aria-label="State" />
-                        </Col>
-                        <Col sm>
-                            <Form.Control type="text" placeholder="Zip" aria-label="Zip" />
-                        </Col> */}
+                
               </Row>
             </div>
 
-            {/*                     
-                    <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label>Default file input example</Form.Label>
-                    <Form.Control type="file" />
-                    </Form.Group>
-
-                    <Row className="g-2">
-                    <Col sm="7">
-                        <Form.Control type="text" placeholder="City" aria-label="City" />
-                    </Col>
-                    <Col sm>
-                        <Form.Control type="text" placeholder="State" aria-label="State" />
-                    </Col>
-                    <Col sm>
-                        <Form.Control type="text" placeholder="Zip" aria-label="Zip" />
-                    </Col>
-                    </Row> */}
+            
           </div>
           <div className="custom-table" style={{ position: "relative" }}>
             <div
@@ -337,26 +494,7 @@ export default function Systemid() {
                 </span>{" "}
                 results
               </h6>
-              {/* <div style={{ display: "flex", gap: 8 }}>
-                <Button
-                  variant=""
-                  className="btn-white d-flex align-items-center gap-2"
-                >
-                  <i className="fars-file-excel"></i>
-                </Button>
-                <div style={{ position: "relative" }}>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Search"
-                    style={{ paddingRight: 30, height: "100%" }}
-                  />
-                  <i
-                    className="ri-search-line"
-                    style={{ position: "absolute", right: 10, top: "23%" }}
-                  ></i>
-                </div>
-              </div> */}
+              
             </div>
             <Grid
               data={dataTableSystemIdGrid}
@@ -373,49 +511,7 @@ export default function Systemid() {
                 table: "table mb-0",
               }}
             />
-            {/* <Table responsive className="mb-0">
-              <thead>
-                <tr>
-                  <th scope="col" style={{ width: "200px" }}>
-                    System ID
-                  </th>
-                  <th scope="col" style={{ width: "200px" }}>
-                    System Type
-                  </th>
-                  <th scope="col" style={{ width: "200px" }}>
-                    System Type Date
-                  </th>
-                  <th scope="col" style={{ width: "200px" }}>
-                    Created By
-                  </th>
-                  <th scope="col" style={{ width: "200px" }}>
-                    Sytem URL
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {dataTableSystemId.map((item, i) => (
-                  <tr key={i}>
-                    <th scope="row">
-                      {" "}
-                      <div style={{ width: 200 }}>{item.id_sytm}</div>
-                    </th>
-                    <td>
-                      <div style={{ width: 200 }}>{item.type_sytm}</div>
-                    </td>
-                    <td>
-                      <div style={{ width: 200 }}>{item.crdt_at}</div>
-                    </td>
-                    <td>
-                      <div style={{ width: 200 }}>{item.crdt_by}</div>
-                    </td>
-                    <td>
-                      <div style={{ width: 200 }}>{item.urll_sytm}</div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table> */}
+            
           </div>
         </div>
         <div style={{ paddingBottom: 60 }}>

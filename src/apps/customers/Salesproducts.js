@@ -5,7 +5,7 @@ import { Button, Table } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import userAvatar from "../../assets/img/img1.jpg";
 import { Link } from "react-router-dom";
-import { dataTableSystemId } from "../../data/apps/administration/system-id";
+import { dataTableSystemId } from "../../data/administration/DataSystemid";
 
 export default function Salesproducts() {
   const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (

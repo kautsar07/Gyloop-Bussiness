@@ -1,3 +1,65 @@
+// Table : systemid_config
+const systemid_config = [
+  {
+    idno_tent: "ID9188421012",
+    name_tent: "Peterosea",
+    idno_systm: "APAC001998242",
+    type_sytm: "Production",
+    name_sytm: "PTR-PRD",
+    addr_sytm: "https://www.gyloop.com/petrosea/prd",
+    ip_sytm: "192.1.221.242",
+    is_deft: "Yes",
+    is_mstr: "No",
+    sorc_depl: "PTR-DEV",
+    date_regs: "2 February 2025",
+    date_regx: "2 February 2025",
+    time_regs: "18:00",
+    time_regx: "15:00",
+    idno_sadm: "Joko.Marwinto",
+    emai_sadm: "Joko.Marwinto@petrosea.com",
+    name_sadm: "Joko Marwinto",
+  },
+  {
+    idno_tent: "ID9188421012",
+    name_tent: "Peterosea",
+    idno_systm: "APAC001998741",
+    type_sytm: "Testing",
+    name_sytm: "PTR-TES",
+    addr_sytm: "https://www.gyloop.com/petrosea/tes",
+    ip_sytm: "192.1.221.244",
+    is_deft: "No",
+    is_mstr: "No",
+    sorc_depl: "PTR-DEV",
+    date_regs: "18 February 2025",
+    date_regx: "18 February 2025",
+    time_regs: "14:35",
+    time_regx: "11:35",
+    idno_sadm: "Joko.Marwinto",
+    emai_sadm: "Joko.Marwinto@petrosea.com",
+    name_sadm: "Joko Marwinto",
+  },
+  {
+    idno_tent: "ID9188421012",
+    name_tent: "Peterosea",
+    idno_systm: "APAC001998739",
+    type_sytm: "Development",
+    name_sytm: "PTR-DEV",
+    addr_sytm: "https://www.gyloop.com/petrosea/dev",
+    ip_sytm: "192.1.221.243",
+    is_deft: "No",
+    is_mstr: "Yes",
+    sorc_depl: "N/A",
+    date_regs: "18 February 2025",
+    date_regx: "18 February 2025",
+    time_regs: "14:21",
+    time_regx: "11:21",
+    idno_sadm: "Joko.Marwinto",
+    emai_sadm: "Joko.Marwinto@petrosea.com",
+    name_sadm: "Joko Marwinto",
+    },
+]
+
+
 const dataTableSystemId = [
   {
     id_sytm: "SYTM0001",
@@ -129,4 +191,4 @@ const dataTableSystemIdGrid = [
   ],
 ];
 
-export { dataTableSystemId, dataTableSystemIdGrid };
+export { systemid_config, dataTableSystemId, dataTableSystemIdGrid };

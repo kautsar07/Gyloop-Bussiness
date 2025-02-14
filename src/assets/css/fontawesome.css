@@ -449,6 +449,16 @@
   .fas-filter:before {content:"\f0b0";}
   .fal-filter:before {content:"\f0b0";}
   .fars-filter:before {content:"\f0b0";}
+  /* icon: file-spreadsheet*/
+  .far-file-spreadsheet:before {content:"\f65b";}
+  .fas-file-spreadsheet:before {content:"\f65b";}
+  .fal-file-spreadsheet:before {content:"\f65b";}
+  .fars-file-spreadsheet:before {content:"\f65b";}
+  /* icon: database*/
+  .far-database:before {content:"\f1c0";}
+  .fas-database:before {content:"\f1c0";}
+  .fal-fdatabase:before {content:"\f1c0";}
+  .fars-database:before {content:"\f1c0";}
   
 
 
