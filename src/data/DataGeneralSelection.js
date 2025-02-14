@@ -73,7 +73,7 @@ const selectSystemType = [
       value: "Training",
       label: (
         <>
-          <i className=" fars-database" style={{ marginRight: 5 }}></i>Testing
+          <i className=" fars-database" style={{ marginRight: 5 }}></i>Training
         </>
       ),
     },

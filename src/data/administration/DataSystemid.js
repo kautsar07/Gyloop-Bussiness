@@ -1,3 +1,7 @@
+// Get Current System ID
+const currentIdno_Systm = "APAC001998242"
+
+
 // Table : systemid_config
 const systemid_config = [
   {
@@ -264,4 +268,4 @@ const dataTableSystemIdGrid = [
   ],
 ];
 
-export { systemid_config, dataTableSystemId, dataTableSystemIdGrid };
+export { systemid_config, dataTableSystemId, dataTableSystemIdGrid, currentIdno_Systm };

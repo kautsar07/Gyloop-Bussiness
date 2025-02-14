@@ -15,6 +15,7 @@ import {
   systemid_config,
   dataTableSystemId,
   dataTableSystemIdGrid,
+  currentIdno_Systm,
 } from "../../data/administration/DataSystemid";
 
 import {
@@ -30,7 +31,7 @@ export default function Systemid() {
 
   // Get the data from current system number
   const index = systemid_config.findIndex(
-    (item) => item.idno_systm === "APAC001998242"
+    (item) => item.idno_systm === currentIdno_Systm
   );
 
   const [startDate, setStartDate] = useState(new Date());
@@ -515,7 +516,7 @@ export default function Systemid() {
             
           </div>
           <div className="custom-table" style={{ position: "relative" }}>
-            <div
+            {/* <div
               className="header-table-custom"
               style={{ position: "absolute", top: 37 }}
             >
@@ -548,7 +549,7 @@ export default function Systemid() {
               className={{
                 table: "table mb-0",
               }}
-            />
+            /> */}
             
           </div>
         </div>
