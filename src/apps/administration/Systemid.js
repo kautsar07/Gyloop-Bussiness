@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
@@ -7,20 +7,43 @@ import Select from "react-select";
 import DatePicker from "react-datepicker";
 import { SketchPicker } from "react-color";
 import "../../assets/css/react-datepicker.min.css";
+import { createRoot } from "react-dom/client";
 
-import { dataTableSystemId } from "../../data/apps/administration/org-system/system-id";
+import {
+  dataTableSystemId,
+  dataTableSystemIdGrid,
+} from "../../data/apps/administration/system-id";
+import { Grid } from "gridjs-react";
 
 export default function Systemid() {
   const [startDate, setStartDate] = useState(new Date());
   const [startDate2, setStartDate2] = useState(new Date());
   const [show, setShow] = useState("Display");
 
-  useEffect(() => {
+  const renderAction = ()=>{
+    const targetElement = document.querySelector(".gridjs-search");
+
+    if (targetElement && !document.getElementById("excel-container")) {
+      const newElement = document.createElement("div");
+      newElement.id = "excel-container"; // Beri ID agar tidak duplikat
+      targetElement.appendChild(newElement);
+  
+      const root = createRoot(newElement);
+      root.render(<Excel />);
+    }
+  }
+
+  const mainRender = ()=>{
     document.body.classList.add("page-app");
     return () => {
       document.body.classList.remove("page-app");
     };
-  }, []);
+  }
+
+  useEffect(() => {
+    renderAction()
+    mainRender()
+  }, [show]);
 
   const [chatActive, setChatActive] = useState(1);
   const [msgShow, setMsgShow] = useState(false);
@@ -29,8 +52,6 @@ export default function Systemid() {
   const navToggle = (e) => {
     e.target.closest(".row").classList.toggle("nav-show");
   };
-
-  const dataTable = dataTableSystemId;
 
   const selectSystemType = [
     {
@@ -58,7 +79,17 @@ export default function Systemid() {
       ),
     },
   ];
+  const Excel = () => {
+    return (
+      <Button id="excel-container" variant="" className="btn-white d-flex align-items-center gap-2">
+        <i className="fars-file-excel"></i>
+      </Button>
+    );
+  };
 
+  useEffect(() => {
+   
+  }, []);
   return (
     <React.Fragment>
       <Header />
@@ -76,7 +107,9 @@ export default function Systemid() {
                 System ID
               </li>
             </ol>
-            <h4 className="main-title mb-0">{show==="Edit"? "Edit":"Display"} System ID Configuration</h4>
+            <h4 className="main-title mb-0">
+              {show === "Edit" ? "Edit" : "Display"} System ID Configuration
+            </h4>
           </div>
           <div className="d-flex gap-2 mt-3 mt-md-0">
             <Button
@@ -143,7 +176,7 @@ export default function Systemid() {
                       Server
                     </>
                   }
-                  className=" react-select-custom"
+                  className=" react-select-server"
                 />
               </div>
             </div>
@@ -198,7 +231,7 @@ export default function Systemid() {
                         onChange={(date) => setStartDate2(date)}
                         className="form-control"
                         disabled={show === "Edit" ? false : true}
-                        dateFormat='dd MMMM yyyy'
+                        dateFormat="dd MMMM yyyy"
                       />
                     </Col>
                   </div>
@@ -286,12 +319,25 @@ export default function Systemid() {
                     </Col>
                     </Row> */}
           </div>
-          <div className="custom-table">
-            <div className="header-table-custom">
-              <h6 style={{ fontWeight: "500", fontSize: "16px", margin:0 }}>
-                Showing <span style={{ fontWeight: "bold"}}> {dataTableSystemId.length} </span> to <span style={{ fontWeight: "bold"}}> {dataTableSystemId.length} </span> of <span style={{ fontWeight: "bold"}}> {dataTableSystemId.length} </span> results
+          <div className="custom-table" style={{ position: "relative" }}>
+            <div
+              className="header-table-custom"
+              style={{ position: "absolute", top: 37 }}
+            >
+              <h6 style={{ fontWeight: "500", fontSize: "16px", margin: 0 }}>
+                Showing <span style={{ fontWeight: "bold" }}>1</span> to{" "}
+                <span style={{ fontWeight: "bold" }}>
+                  {" "}
+                  {dataTableSystemId.length}{" "}
+                </span>{" "}
+                of{" "}
+                <span style={{ fontWeight: "bold" }}>
+                  {" "}
+                  {dataTableSystemId.length}{" "}
+                </span>{" "}
+                results
               </h6>
-              <div style={{ display: "flex", gap: 8 }}>
+              {/* <div style={{ display: "flex", gap: 8 }}>
                 <Button
                   variant=""
                   className="btn-white d-flex align-items-center gap-2"
@@ -303,16 +349,31 @@ export default function Systemid() {
                     type="text"
                     className="form-control"
                     placeholder="Search"
-                    style={{ paddingRight: 30, height:'100%' }}
+                    style={{ paddingRight: 30, height: "100%" }}
                   />
                   <i
                     className="ri-search-line"
                     style={{ position: "absolute", right: 10, top: "23%" }}
                   ></i>
                 </div>
-              </div>
+              </div> */}
             </div>
-            <Table responsive className="mb-0">
+            <Grid
+              data={dataTableSystemIdGrid}
+              columns={[
+                "System ID",
+                "System Type",
+                "System Type Date",
+                "Created By",
+                "Created URL",
+              ]}
+              search={true}
+              pagination={false}
+              className={{
+                table: "table mb-0",
+              }}
+            />
+            {/* <Table responsive className="mb-0">
               <thead>
                 <tr>
                   <th scope="col" style={{ width: "200px" }}>
@@ -354,7 +415,7 @@ export default function Systemid() {
                   </tr>
                 ))}
               </tbody>
-            </Table>
+            </Table> */}
           </div>
         </div>
         <div style={{ paddingBottom: 60 }}>
@@ -362,10 +423,16 @@ export default function Systemid() {
         </div>
       </div>
       <div className=" button-action">
-        <Button variant="" className={`${show === "Edit"? "btn-primary":'btn-disable'} `}>
+        <Button
+          variant=""
+          className={`${show === "Edit" ? "btn-primary" : "btn-disable"} `}
+        >
           Save
         </Button>
-        <Button variant="" className={`${show === "Edit"? "btn-danger":'btn-disable'} `}>
+        <Button
+          variant=""
+          className={`${show === "Edit" ? "btn-danger" : "btn-disable"} `}
+        >
           Discard
         </Button>
       </div>

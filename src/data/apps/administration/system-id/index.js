@@ -63,5 +63,70 @@ const dataTableSystemId = [
     urll_sytm: "-",
   },
 ];
+const dataTableSystemIdGrid = [
+  [
+    "SYTM0001",
+    "Development",
+    "02/12/2025",
+    "Jhon Doe",
+    "-",
+  ],
+  [
+    "SYTM0002",
+    "Testing",
+    "02/12/2025",
+    "Jhon Doe",
+    "-",
+  ],
+  [
+    "SYTM0003",
+    "Production",
+    "02/12/2025",
+    "Jhon Doe",
+    "-",
+  ],
+  [
+    "SYTM0004",
+    "Development",
+    "02/12/2025",
+    "Jhon Doe",
+    "-",
+  ],
+  [
+    "SYTM0005",
+    "Testing",
+    "02/12/2025",
+    "Jhon Doe",
+    "-",
+  ],
+  [
+    "SYTM0006",
+    "Production",
+    "02/12/2025",
+    "Jhon Doe",
+    "-",
+  ],
+  [
+    "SYTM0007",
+    "Development",
+    "02/12/2025",
+    "Jhon Doe",
+    "-",
+  ],
+  [
+    "SYTM0008",
+    "Testing",
+    "02/12/2025",
+    "Jhon Doe",
+    "-",
+  ],
+  [
+    "SYTM0009",
+    "Production",
+    "02/12/2025",
+    "Jhon Doe",
+    "-",
+  ],
+];
 
-export { dataTableSystemId };
+export { dataTableSystemId, dataTableSystemIdGrid };
