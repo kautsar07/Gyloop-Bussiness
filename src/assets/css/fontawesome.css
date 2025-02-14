@@ -459,7 +459,16 @@
   .fas-database:before {content:"\f1c0";}
   .fal-fdatabase:before {content:"\f1c0";}
   .fars-database:before {content:"\f1c0";}
-  
+  /* icon: lightbulb-on*/
+  .far-lightbulb-on:before {content:"\f672";}
+  .fas-lightbulb-on:before {content:"\f672";}
+  .fal-lightbulb-on:before {content:"\f672";}
+  .fars-lightbulb-on:before {content:"\f672";}
+  /*icon : receipt*/
+  .far-receipt:before {content:"\f543";}
+  .fas-receipt:before {content:"\f543";}
+  .fal-receipt:before {content:"\f543";}
+  .fars-receipt:before {content:"\f543";}
 
 
 

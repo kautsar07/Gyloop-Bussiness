@@ -15,11 +15,24 @@ import {
   systemid_config,
   dataTableSystemId,
   dataTableSystemIdGrid,
-
 } from "../../data/administration/DataSystemid";
+
+import {
+  selectBoolean,
+  selectSystemType,
+  selectActivationStatus,
+  selectLicenseType,
+} from "../../data/DataGeneralSelection";
+
 import { Grid } from "gridjs-react";
 
 export default function Systemid() {
+
+  // Get the data from current system number
+  const index = systemid_config.findIndex(
+    (item) => item.idno_systm === "APAC001998242"
+  );
+
   const [startDate, setStartDate] = useState(new Date());
   const [startDate2, setStartDate2] = useState(new Date());
   const [show, setShow] = useState("Display");
@@ -36,6 +49,8 @@ export default function Systemid() {
       root.render(<Excel />);
     }
   }
+
+  
 
   const mainRender = ()=>{
     document.body.classList.add("page-app");
@@ -65,62 +80,7 @@ export default function Systemid() {
         .filter(source => source !== "N/A")
     )
   ].map(source => ({ value: source, label: source }));
-
-
-  const selectSystemType = [
-    {
-      value: "Development",
-      label: (
-        <>
-          <i className=" fars-database" style={{ marginRight: 5 }}></i>Development
-        </>
-      ),
-    },
-    {
-      value: "Testing",
-      label: (
-        <>
-          <i className=" fars-database" style={{ marginRight: 5 }}></i>Testing
-        </>
-      ),
-    },
-    {
-      value: "Training",
-      label: (
-        <>
-          <i className=" fars-database" style={{ marginRight: 5 }}></i>Testing
-        </>
-      ),
-    },
-    {
-      value: "Production",
-      label: (
-        <>
-          <i className=" fars-database" style={{ marginRight: 5 }}></i>Production
-        </>
-      ),
-    },
-  ];
-
-  const selectBoolean = [
-    {
-      value: "Yes",
-      label: (
-        <>
-          Yes
-        </>
-      ),
-    },
-    {
-      value: "No",
-      label: (
-        <>
-          No
-        </>
-      ),
-    },
-    
-  ];
+  
 
   const Excel = () => {
     return (
@@ -175,13 +135,13 @@ export default function Systemid() {
               variant=""
               className="btn-white d-flex align-items-center gap-2"
             >
-              <i className="ri-printer-line fs-18 lh-1"></i>Logs
+              <i className="fars-receipt"></i>Logs
             </Button>
             <Button
               variant=""
               className="btn-white d-flex align-items-center gap-2"
             >
-              <i className="ri-share-line fs-18 lh-1"></i>Documentation
+              <i className="fars-lightbulb-on"></i>Documentation
             </Button>
 
             {/* <Button variant="primary" className="d-flex align-items-center gap-2">
@@ -206,7 +166,7 @@ export default function Systemid() {
             >
               <div>
                 <p className="fw-normal" style={{ marginBottom: 0 }}>
-                  Last update: 24 Mar 2024, 18:45
+                  Last update: {systemid_config[index].date_updt}, {systemid_config[index].time_updt}
                 </p>
               </div>
               <div style={{ width: 200 }}>
@@ -244,7 +204,7 @@ export default function Systemid() {
                       type="text"
                       placeholder="Generated number from the systems"
                       disabled={show === "Edit" ? false : true}
-                      defaultValue={systemid_config[0].idno_systm}
+                      defaultValue={systemid_config[index].idno_systm}
                     />
                   </div>
 
@@ -261,8 +221,8 @@ export default function Systemid() {
                       className=" react-select-custom"
                       defaultValue={[
                         {
-                          value: systemid_config[1].type_sytm,
-                          label: systemid_config[0].type_sytm,
+                          value: systemid_config[index+1].type_sytm,
+                          label: systemid_config[index].type_sytm,
                         },
                       ]}
                     />
@@ -283,7 +243,7 @@ export default function Systemid() {
                         type="text"
                         placeholder="Please input System Name"
                         disabled={show === "Edit" ? false : true}
-                        defaultValue={systemid_config[0].name_sytm}
+                        defaultValue={systemid_config[index].name_sytm}
                       />
                     </Col>
                   </div>
@@ -303,7 +263,7 @@ export default function Systemid() {
                       type="text"
                       placeholder="Generated URL from the systems"
                       disabled={show === "Edit" ? false : true}
-                      defaultValue={systemid_config[0].addr_sytm}
+                      defaultValue={systemid_config[index].addr_sytm}
                     />
                   </div>
 
@@ -321,7 +281,7 @@ export default function Systemid() {
                       type="text"
                       placeholder="Generated IP from the systems"
                       disabled={show === "Edit" ? false : true}
-                      defaultValue={systemid_config[0].ip_sytm}
+                      defaultValue={systemid_config[index].ip_sytm}
                     />
                   </div>
 
@@ -358,8 +318,8 @@ export default function Systemid() {
                         className=" react-select-custom"
                         defaultValue={[
                           {
-                            value: systemid_config[1].is_deft,
-                            label: systemid_config[0].is_deft,
+                            value: systemid_config[index+1].is_deft,
+                            label: systemid_config[index].is_deft,
                           },
                         ]}
                       />
@@ -380,8 +340,8 @@ export default function Systemid() {
                         className=" react-select-custom"
                         defaultValue={[
                           {
-                            value: systemid_config[1].is_mstr,
-                            label: systemid_config[0].is_mstr,
+                            value: systemid_config[index+1].is_mstr,
+                            label: systemid_config[index].is_mstr,
                           },
                         ]}
                       />
@@ -404,8 +364,8 @@ export default function Systemid() {
                         isDisabled={show === "Edit" ? false : true}
                         className="react-select-custom"
                         defaultValue={{
-                          value: systemid_config[1].sorc_depl,
-                          label: systemid_config[0].sorc_depl,
+                          value: systemid_config[index+1].sorc_depl,
+                          label: systemid_config[index].sorc_depl,
                         }}
                       />
                       </Col>
@@ -425,7 +385,7 @@ export default function Systemid() {
                       type="text"
                       placeholder="Please input Super Admin ID"
                       disabled={show === "Edit" ? false : true}
-                      defaultValue={systemid_config[0].idno_sadm}
+                      defaultValue={systemid_config[index].idno_sadm}
                     />
                   </div>
 
@@ -445,7 +405,7 @@ export default function Systemid() {
                       type="text"
                       placeholder="Generated date & time from the systems"
                       disabled={show === "Edit" ? false : true}
-                      defaultValue={`${systemid_config[0].date_regs}, ${systemid_config[0].time_regs}`}
+                      defaultValue={`${systemid_config[index].date_regs}, ${systemid_config[index].time_regs}`}
                     />
                   </div>
 
@@ -453,22 +413,100 @@ export default function Systemid() {
 
                 {/* //Coumn 3 */}
                 <Col>
-                  {/* <div className="mb-1">
+                
+                  {/* // System Status */}
+                  <div className="mb-4">
+                    <Form.Label className="form-label-custom">
+                    System Status
+                    </Form.Label>
+                    <Col className=" custom-form-control">
+                      <Select
+                        id="sytm_sint"
+                        options={selectActivationStatus}
+                        isSearchable={true}
+                        isDisabled={show === "Edit" ? false : true}
+                        className=" react-select-custom"
+                        defaultValue={[
+                          {
+                            value: systemid_config[index+1].is_mstr,
+                            label: systemid_config[index].is_mstr,
+                          },
+                        ]}
+                      />
+                    </Col>
+                  </div>    
+
+                  {/* // SKU Number */}
+                  <div className="mb-4">
                     <Form.Label
                       className="f-1 form-label-custom"
-                      htmlFor="System URL"
+                      htmlFor="SKU Number"
                     >
-                      System URL
+                      SKU Number
                     </Form.Label>
                     <Form.Control
-                      id="urll_sytm"
-                      // className="mb-2"
+                      required
+                      id="idno_skus"
                       type="text"
-                      placeholder="System URL"
+                      placeholder="Generated SKU Number from the systems"
                       disabled={show === "Edit" ? false : true}
-                      defaultValue={dataTableSystemId[0].urll_sytm}
+                      defaultValue={systemid_config[index].idno_skus}
                     />
-                  </div> */}
+                  </div>
+
+                  {/* // License Number */}
+                  <div className="mb-4">
+                    <Form.Label
+                      className="f-1 form-label-custom"
+                      htmlFor="License Number"
+                    >
+                      License Number
+                    </Form.Label>
+                    <Form.Control
+                      required
+                      id="idno_lcsn"
+                      type="text"
+                      placeholder="Generated License Number from the systems"
+                      disabled={show === "Edit" ? false : true}
+                      defaultValue={systemid_config[index].idno_lcsn}
+                    />
+                  </div>
+
+                  {/* // License Type */}
+                  <div className="mb-4">
+                    <Form.Label
+                      className="f-1 form-label-custom"
+                      htmlFor="License Type"
+                    >
+                      License Type
+                    </Form.Label>
+                    {/* <Col className=" custom-form-control">
+                      <Form.Control
+                        required
+                        id="type_lcsn"
+                        type="text"
+                        placeholder="Generated License Type from the systems"
+                        disabled={show === "Edit" ? false : true}
+                        defaultValue={systemid_config[index].type_lcsn}
+                      />
+                    </Col> */}
+                    <Col className=" custom-form-control">
+                      <Select
+                        id="type_lcsn"
+                        options={selectLicenseType}
+                        isSearchable={true}
+                        isDisabled={show === "Edit" ? false : true}
+                        className=" react-select-custom"
+                        defaultValue={[
+                          {
+                            value: systemid_config[index+1].type_lcsn,
+                            label: systemid_config[index].type_lcsn,
+                          },
+                        ]}
+                      />
+                    </Col>
+                  </div>
+
                 </Col>
                 
               </Row>
